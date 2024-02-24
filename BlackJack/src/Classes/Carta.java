@@ -4,6 +4,7 @@ public class Carta {
 
     private int valor;
     private String naipe;
+
     public Carta(int numero, String naipe) {
         setValor(numero);
         setNaipe(naipe);
