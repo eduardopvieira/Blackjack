@@ -1,7 +1,5 @@
 package Classes;
 import ImpPilha.Pilha;
-
-import java.sql.SQLOutput;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -80,6 +78,9 @@ public class BlackJack {
                     System.out.println("Você teria conseguido exatamente 21 se tivesse continuado.");
                 }
             }
+        }
+        if (somaTotal == 21) {
+            System.out.println("Conseguiu exatamente 21. Você venceu.");
         }
     }
 }

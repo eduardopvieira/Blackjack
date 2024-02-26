@@ -1,14 +1,16 @@
 package Classes;
-
 import java.util.HashSet;
 
 public class Baralho {
-
     //Essa classe serve basicamente como um hashset de todas as cartas tirando o coringa.
 
     private HashSet<Carta> baralho;
 
     public Baralho() {
+        this.baralho = addTodasAsCartas();
+    }
+
+    public HashSet<Carta> addTodasAsCartas() {
         baralho = new HashSet<>();
 
         String[] naipes = {"Copas", "Espadas", "Paus", "Ouros"};
@@ -19,15 +21,17 @@ public class Baralho {
                 baralho.add(new Carta(valor, naipe));
             }
         }
-    }
-
-    public HashSet<Carta> getBaralho() {
         return baralho;
+
     }
 
     public void printBaralho() {
         for (Carta carta : baralho) {
             System.out.println(carta.getValor() + " " + carta.getNaipe());
         }
+    }
+
+    public HashSet<Carta> getBaralho() {
+        return baralho;
     }
 }

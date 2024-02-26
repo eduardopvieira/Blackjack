@@ -1,10 +1,7 @@
 package ImpPilha;
 
 import Exception.MyException;
-import ImpPilha.InterfacePilha;
-
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -48,19 +45,11 @@ public class Pilha<T> implements InterfacePilha<T> {
         return array[topo];
     }
 
-    public void verPilha() {
-        for (T elemento : array) {
-            System.out.println();
-        }
-    }
-
     public void embaralharPilha() {
         List<T> listaProv = Arrays.asList(array);
         Collections.shuffle(listaProv); //Método do proprio java para embaralhar listas. não tem pra array, entao tive que transformar
         listaProv.toArray(array);
     }
-
-
 
     @Override
     public boolean isEmpty() {
