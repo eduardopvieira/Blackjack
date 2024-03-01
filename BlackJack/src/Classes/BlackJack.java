@@ -9,9 +9,16 @@ public class BlackJack {
 
     public BlackJack() {}; //Construtor
 
-    public void start() throws MyException {
+    public int definirJogadores() {
+        System.out.println("Quantos jogadores irão jogar? ");
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
 
-        int somaTotal = 0;              //Soma das cartas que vc puxou até agora
+    public Pontuacao comecarPartida() throws MyException {
+
+        int somaTotal = 0;              //Soma das cartas que foram puxadas até agora
+        int qtdCartas = 0;              //Soma da quantidade de cartas puxadas até agora
         boolean continuar = true;       //vê se o player decidiu parar
         int decisao;                    //vê se o player decidiu puxar outra carta ou para
 
@@ -29,6 +36,7 @@ public class BlackJack {
                 case 1:
                     Carta c = mesa.pop();
                     somaTotal += c.getValor();
+                    qtdCartas += 1;
                     System.out.println("Você puxou um " + c.getValor() + " de " + c.getNaipe());
                     break;
                 case 2:
@@ -40,7 +48,8 @@ public class BlackJack {
         }
 
         fimDeJogo(somaTotal,mesa);
-
+        Pontuacao pt = new Pontuacao(somaTotal, qtdCartas);
+        return pt;
     }
 
     public Pilha<Carta> prepararMesa() throws MyException {
@@ -65,21 +74,16 @@ public class BlackJack {
             Carta prox = mesa.peek();
             int valorHipotetico = somaTotal + prox.getValor();
 
-            if (valorHipotetico > 21) {
-                System.out.println("A proxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
-                System.out.println("Você teria perdido se tivesse continuado. Ainda bem que parou.");
-            } else {
-                if (somaTotal + prox.getValor() < 21) {
-                    System.out.println("A proxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
-                    System.out.println("Você não teria perdido se tivesse continuado.");
+            System.out.println("A proxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
 
-                } else {
-                    System.out.println("A proxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
-                    System.out.println("Você teria conseguido exatamente 21 se tivesse continuado.");
-                }
+            if (valorHipotetico > 21) {
+                System.out.println("Você teria perdido se tivesse continuado. Ainda bem que parou.");
+            } else if (valorHipotetico < 21) {
+                System.out.println("Você não teria perdido se tivesse continuado.");
+            } else {
+                System.out.println("Você teria conseguido exatamente 21 se tivesse continuado.");
             }
-        }
-        if (somaTotal == 21) {
+        } else if (somaTotal == 21) {
             System.out.println("Conseguiu exatamente 21. Você venceu.");
         }
     }
