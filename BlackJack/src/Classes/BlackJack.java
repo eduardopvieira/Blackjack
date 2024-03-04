@@ -17,17 +17,16 @@ public class BlackJack {
 
     public Pontuacao comecarPartida() throws MyException {
 
-        int somaTotal = 0;              //Soma das cartas que foram puxadas até agora
-        int qtdCartas = 0;              //Soma da quantidade de cartas puxadas até agora
+        Mao mao = new Mao();
         boolean continuar = true;       //vê se o player decidiu parar
         int decisao;                    //vê se o player decidiu puxar outra carta ou para
 
         Pilha<Carta> mesa = prepararMesa();
         Scanner sc = new Scanner(System.in);
 
-        while (somaTotal < 21 && continuar) {
+        while (mao.getSomaTotal() < 21 && continuar) {
             System.out.println("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
-            System.out.println("VALOR ATUAL: " + somaTotal);
+            System.out.println("VALOR ATUAL: " + mao.getSomaTotal());
             System.out.println("Puxar carta?");
             System.out.println("1 - Puxar || 2 - Parar");
             decisao = sc.nextInt();
@@ -35,9 +34,8 @@ public class BlackJack {
             switch(decisao) {
                 case 1:
                     Carta c = mesa.pop();
-                    somaTotal += c.getValor();
-                    qtdCartas += 1;
-                    System.out.println("Você puxou um " + c.getValor() + " de " + c.getNaipe());
+                    mao.adicionarCarta(c);
+                    mao.mostraMao();
                     break;
                 case 2:
                     continuar = false;
@@ -47,8 +45,8 @@ public class BlackJack {
             }
         }
 
-        fimDeJogo(somaTotal,mesa);
-        Pontuacao pt = new Pontuacao(somaTotal, qtdCartas);
+        fimDeJogo(mao.getSomaTotal(),mesa);
+        Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas());
         return pt;
     }
 
