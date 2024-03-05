@@ -19,7 +19,7 @@ public class BlackJack {
 
         Mao mao = new Mao();
         boolean continuar = true;       //vê se o player decidiu parar
-        int decisao;                    //vê se o player decidiu puxar outra carta ou para
+        int decisao;                    //vê se o player decidiu puxar outra carta ou parar
 
         Pilha<Carta> mesa = prepararMesa();
         Scanner sc = new Scanner(System.in);
