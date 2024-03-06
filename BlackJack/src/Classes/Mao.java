@@ -38,19 +38,15 @@ public class Mao {
         switch (carta.getNaipe()) {
             case "Copas":
                 Naipe = "\u2665";
-                System.out.println(Naipe);
                 break;
             case "Paus":
                 Naipe = "\u2663";
-                System.out.println(Naipe);
                 break;
             case "Espadas":
                 Naipe = "\u2660";
-                System.out.println(Naipe);
                 break;
             case "Ouros":
                 Naipe = "\u2666";
-                System.out.println(Naipe);
                 break;
             default:
                 break;
