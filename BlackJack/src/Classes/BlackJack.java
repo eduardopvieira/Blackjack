@@ -1,5 +1,7 @@
 package Classes;
 import ImpPilha.Pilha;
+
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -24,12 +26,18 @@ public class BlackJack {
         Pilha<Carta> mesa = prepararMesa();
         Scanner sc = new Scanner(System.in);
 
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();  
+
         while (mao.getSomaTotal() < 21 && continuar) {
             System.out.println("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
             System.out.println("VALOR ATUAL: " + mao.getSomaTotal());
             System.out.println("Puxar carta?");
             System.out.println("1 - Puxar || 2 - Parar");
             decisao = sc.nextInt();
+
+            System.out.print("\033[H\033[2J");  
+            System.out.flush();  
 
             switch(decisao) {
                 case 1:

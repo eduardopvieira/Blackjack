@@ -58,11 +58,12 @@ public class Mao {
     private String conversorNumero(Carta carta){
 
         String numero = "";
-        Map<String, Character> mapearCarta = new HashMap<>();
-        mapearCarta.put("1", 'A');
-        mapearCarta.put("11", 'J');
-        mapearCarta.put("12", 'Q');
-        mapearCarta.put("13", 'K');
+        Map<String, String> mapearCarta = new HashMap<>();
+        mapearCarta.put("1", "A");
+        mapearCarta.put("10", "10");
+        mapearCarta.put("11", "J");
+        mapearCarta.put("12", "Q");
+        mapearCarta.put("13", "K");
         
         String valor = String.valueOf(carta.getValor());
 
