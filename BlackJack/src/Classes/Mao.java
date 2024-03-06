@@ -41,15 +41,15 @@ public class Mao {
                 System.out.println(Naipe);
                 break;
             case "Paus":
-                Naipe = "\u2665";
+                Naipe = "\u2663";
                 System.out.println(Naipe);
                 break;
             case "Espadas":
-                Naipe = "\u2665";
+                Naipe = "\u2660";
                 System.out.println(Naipe);
                 break;
             case "Ouros":
-                Naipe = "\u2665";
+                Naipe = "\u2666";
                 System.out.println(Naipe);
                 break;
             default:
