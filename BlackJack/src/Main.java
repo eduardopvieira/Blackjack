@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws MyException, IOException {
-        System.out.printf("\u2660");
+        System.out.println("\u2660");
         System.out.println("♣️♥️♠️♦️");
         BlackJack bj = new BlackJack();
         int qtdJogadores = bj.definirJogadores();

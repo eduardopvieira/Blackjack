@@ -27,7 +27,7 @@ public class BlackJack {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("\033[H\033[2J");  
-        System.out.flush();  
+        limparConsole();
 
         while (mao.getSomaTotal() < 21 && continuar) {
             System.out.println("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
@@ -36,8 +36,8 @@ public class BlackJack {
             System.out.println("1 - Puxar || 2 - Parar");
             decisao = sc.nextInt();
 
-            System.out.print("\033[H\033[2J");  
-            System.out.flush();  
+            System.out.print("\033[H\033[2J");
+            limparConsole();
 
             switch(decisao) {
                 case 1:
@@ -93,4 +93,23 @@ public class BlackJack {
             System.out.println("Conseguiu exatamente 21. Você venceu.");
         }
     }
+
+    public static void limparConsole() {
+        try {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                // Limpa o console no Windows
+                ProcessBuilder builder = new ProcessBuilder("cmd", "/c", "cls");
+                builder.inheritIO().start().waitFor();
+            } else {
+                // Limpa o console em outros sistemas operacionais
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (final Exception e) {
+            // Tratar exceções
+        }
+    }
+
 }
