@@ -1,7 +1,5 @@
 package Classes;
 import ImpPilha.Pilha;
-
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -27,7 +25,7 @@ public class BlackJack {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("\033[H\033[2J");  
-        limparConsole();
+        //limparConsole();
 
         while (mao.getSomaTotal() < 21 && continuar) {
             System.out.println("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
@@ -54,6 +52,8 @@ public class BlackJack {
         }
 
         fimDeJogo(mao.getSomaTotal(),mesa);
+        System.out.println("Digite um número para continuar");
+        sc.nextInt();
         Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas());
         return pt;
     }
@@ -85,13 +85,14 @@ public class BlackJack {
             if (valorHipotetico > 21) {
                 System.out.println("Você teria perdido se tivesse continuado. Ainda bem que parou.");
             } else if (valorHipotetico < 21) {
-                System.out.println("Você não teria perdido se tivesse continuado.");
+                System.out.println("Você não teria perdido se tivesse continuado. Medroso.");
             } else {
-                System.out.println("Você teria conseguido exatamente 21 se tivesse continuado.");
+                System.out.println("Você teria conseguido exatamente 21 se tivesse continuado. Deu azar.");
             }
         } else if (somaTotal == 21) {
             System.out.println("Conseguiu exatamente 21. Você venceu.");
         }
+
     }
 
     public static void limparConsole() {

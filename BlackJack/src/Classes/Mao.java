@@ -37,16 +37,16 @@ public class Mao {
 
         switch (carta.getNaipe()) {
             case "Copas":
-                Naipe = "\u2665";
+                Naipe = "C"; //"\u2665";
                 break;
             case "Paus":
-                Naipe = "\u2663";
+                Naipe = "P"; //"\u2663";
                 break;
             case "Espadas":
-                Naipe = "\u2660";
+                Naipe = "E"; // "\u2660";
                 break;
             case "Ouros":
-                Naipe = "\u2666";
+                Naipe = "O";//\u2666";
                 break;
             default:
                 break;
