@@ -1,11 +1,11 @@
 package Classes;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
+import ImpLL.MyLinkedList;
 
 public class Mao {
-    LinkedList<Carta> listaCartas = new LinkedList<>();
+    MyLinkedList<Carta> listaCartas = new MyLinkedList<>();
 
     public Mao() {}
 
@@ -20,15 +20,15 @@ public class Mao {
     }
 
     public int getQtdCartas() {
-        return listaCartas.size();
+        return listaCartas.getSize();
     }
 
-    public LinkedList<Carta> getListaCartas() {
+    public MyLinkedList<Carta> getListaCartas() {
         return listaCartas;
     }
 
     public void adicionarCarta(Carta carta){
-        this.listaCartas.add(carta);
+        this.listaCartas.addLast(carta);
     }
 
     private String conversorNaipe(Carta carta){
@@ -60,7 +60,7 @@ public class Mao {
         String numero = "";
         Map<String, String> mapearCarta = new HashMap<>();
         mapearCarta.put("1", "A");
-        mapearCarta.put("10", "10");
+        mapearCarta.put("10", "10"); //deve ter alguma forma de otimizar essa linha aqui
         mapearCarta.put("11", "J");
         mapearCarta.put("12", "Q");
         mapearCarta.put("13", "K");

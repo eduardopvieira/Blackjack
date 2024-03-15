@@ -7,6 +7,10 @@ import Exception.MyException;
 
 public class BlackJack {
 
+    public static final String ANSI_RESET = "\u001B[0m"; 
+    public static final String cor = "\u001B[35m"; 
+
+
     public BlackJack() {}; //Construtor
 
     public int definirJogadores() {
@@ -25,10 +29,9 @@ public class BlackJack {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("\033[H\033[2J");  
-        //limparConsole();
 
         while (mao.getSomaTotal() < 21 && continuar) {
-            System.out.println("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
+            System.out.println(cor + "=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=" + ANSI_RESET);
             System.out.println("VALOR ATUAL: " + mao.getSomaTotal());
             System.out.println("Puxar carta?");
             System.out.println("1 - Puxar || 2 - Parar");
