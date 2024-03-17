@@ -7,13 +7,14 @@ import Exception.MyException;
 
 public class BlackJack {
 
-    public static final String ANSI_RESET = "\u001B[0m"; 
-    public static final String cor = "\u001B[35m"; 
-
+    public static final String reset = "\u001B[0m"; 
+    public static final String roxo = "\u001B[35m"; 
+    public static final String vermelho = "\u001B[31m"; 
 
     public BlackJack() {}; //Construtor
 
     public int definirJogadores() {
+        System.out.print("\033[H\033[2J");
         System.out.println("Quantos jogadores irão jogar? ");
         Scanner sc = new Scanner(System.in);
         return sc.nextInt();
@@ -27,11 +28,15 @@ public class BlackJack {
 
         Pilha<Carta> mesa = prepararMesa();
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("\033[H\033[2J");  
+        System.out.print("\033[H\033[2J");
+        
+        //PUXAR PRIMEIRA CARTA
+        Carta primeiraCarta = mesa.pop();
+        mao.adicionarCarta(primeiraCarta);
+        mao.mostraMao();
 
         while (mao.getSomaTotal() < 21 && continuar) {
-            System.out.println(cor + "=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=" + ANSI_RESET);
+            System.out.println(roxo + "=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=" + reset);
             System.out.println("VALOR ATUAL: " + mao.getSomaTotal());
             System.out.println("Puxar carta?");
             System.out.println("1 - Puxar || 2 - Parar");
@@ -75,7 +80,7 @@ public class BlackJack {
     }
 
     public void fimDeJogo(int somaTotal, Pilha<Carta> mesa) throws MyException {
-        System.out.println("=-=-=-=-=-=-=-= FIM DE JOGO =-=-=-=-=-=-=-=");
+        System.out.println(vermelho + "=-=-=-=-=-=-=-= FIM DE JOGO =-=-=-=-=-=-=-=" + reset);
 
         System.out.println("Você encerrou com uma soma de " + somaTotal);
 
