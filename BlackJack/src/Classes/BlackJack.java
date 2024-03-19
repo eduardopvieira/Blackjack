@@ -59,32 +59,48 @@ public class BlackJack {
             }
         }
 
+        while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal() && mao.getSomaTotal() <= 21) {
+            limparConsole();
+
+            maoDealer.adicionarCarta(mesa.pop());
+
+            maoDealer.mostraMao();
+            mao.mostraMao();
+
+            System.out.println("Pressione Enter para continuar");
+            // Limpando Buffer
+            sc.nextLine();
+    
+            // Pausando o jogo e esperando o User apertar enter
+            sc.nextLine();
+    
+            System.out.println("Continuando a execução...");
+        }
+
         limparConsole();
 
-        maoDealer.adicionarCarta(mesa.pop());
-
-        if(mao.getSomaTotal() > 21){
+        if(mao.getSomaTotal() > 21 || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)){
 
             maoDealer.mostraMao();
             mao.mostraMao();
 
             System.out.println("Voce perdeu");
 
-        } else if (mao.getSomaTotal() < 21 & mao.getSomaTotal() > maoDealer.getSomaTotal() ){
+        } else if (maoDealer.getSomaTotal() > 21 ){
 
             maoDealer.mostraMao();
             mao.mostraMao();
 
             System.out.println("Voce Venceu");
 
-        } else if (mao.getSomaTotal() == 21 & mao.getSomaTotal() > maoDealer.getSomaTotal()){
+        } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()){
 
             maoDealer.mostraMao();
             mao.mostraMao();
 
             System.out.println("BLACKJACK");
 
-        } else if (mao.getSomaTotal() <= 21 & mao.getSomaTotal() == maoDealer.getSomaTotal()){
+        } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()){
 
             maoDealer.mostraMao();
             mao.mostraMao();
@@ -92,6 +108,13 @@ public class BlackJack {
             System.out.println("Empate");
 
         }
+
+        System.out.println("Pressione Enter para continuar");
+        // Limpando Buffer
+        sc.nextLine();
+
+        // Pausando o jogo e esperando o User apertar enter
+        sc.nextLine();
 
         Historico historico = new Historico();
         historico.gravarHistorico(jogadorAtual, mao.maoFinal());
