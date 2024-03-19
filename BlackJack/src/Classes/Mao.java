@@ -105,6 +105,29 @@ public class Mao {
         System.out.println(maoFinal);
     }
 
+    public String maoFinal(){
 
+        String linha1 = "";
+        String linha2 = "";
+        String linha3 = "";
+        String linha4 = "";
+
+        for (Carta carta : listaCartas) {
+
+            String naipe = conversorNaipe(carta);
+            String numero = conversorNumero(carta);
+
+            linha1 += " _____  ";
+            if(numero == "10"){
+                linha2 += "|"+ numero +"   | ";
+            } else {
+                linha2 += "|"+ numero +"    | ";
+            }
+            linha3 += "|  "+ naipe +"  | ";
+            linha4 += "|_____| ";
+        }
+
+        return linha1 + "\n" + linha2 + "\n" + linha3 + "\n" + linha4 + "\n"; 
+    }
     
 }

@@ -1,10 +1,6 @@
 =-=-=-=- Jogador 1: -=-=-=-=
-Pontos: 20 | Cartas Puxadas: 2
+Pontos: 29 | Cartas Puxadas: 5
 =-=-=-=- Jogador 2: -=-=-=-=
-Pontos: 20 | Cartas Puxadas: 4
+Pontos: 22 | Cartas Puxadas: 3
 =-=-=-=- Jogador 3: -=-=-=-=
-Pontos: 19 | Cartas Puxadas: 3
-=-=-=-=- Jogador 4: -=-=-=-=
-Pontos: 24 | Cartas Puxadas: 4
-=-=-=-=- Jogador 5: -=-=-=-=
-Pontos: 24 | Cartas Puxadas: 2
+Pontos: 22 | Cartas Puxadas: 2

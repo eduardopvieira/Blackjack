@@ -11,16 +11,10 @@ public class BlackJack {
     public static final String roxo = "\u001B[35m"; 
     public static final String vermelho = "\u001B[31m"; 
 
+
     public BlackJack() {}; //Construtor
 
-    public int definirJogadores() {
-        System.out.print("\033[H\033[2J");
-        System.out.println("Quantos jogadores irão jogar? ");
-        Scanner sc = new Scanner(System.in);
-        return sc.nextInt();
-    }
-
-    public Pontuacao comecarPartida() throws MyException {
+    public Pontuacao comecarPartida(int jogadorAtual) throws MyException {
 
         Mao mao = new Mao();
         boolean continuar = true;       //vê se o player decidiu parar
@@ -59,9 +53,20 @@ public class BlackJack {
             }
         }
 
+        Historico historico = new Historico();
+        historico.gravarHistorico(jogadorAtual, mao.maoFinal());
+
         fimDeJogo(mao.getSomaTotal(),mesa);
-        System.out.println("Digite um número para continuar");
-        sc.nextInt();
+
+        System.out.println("Pressione Enter para continuar");
+        // Limpando Buffer
+        sc.nextLine();
+
+        // Pausando o jogo e esperando o User apertar enter
+        sc.nextLine();
+
+        System.out.println("Continuando a execução...");
+
         Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas());
         return pt;
     }

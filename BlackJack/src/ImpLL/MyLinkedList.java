@@ -62,7 +62,6 @@ public class MyLinkedList<T> implements InterfaceLinkedList<T>, Iterable<T> {
 
     @Override
     public boolean addAfter(T dado, T crit) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'addAfter'");
     }
 
