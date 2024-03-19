@@ -1,6 +1,2 @@
 =-=-=-=- Jogador 1: -=-=-=-=
-Pontos: 29 | Cartas Puxadas: 5
-=-=-=-=- Jogador 2: -=-=-=-=
-Pontos: 22 | Cartas Puxadas: 3
-=-=-=-=- Jogador 3: -=-=-=-=
-Pontos: 22 | Cartas Puxadas: 2
+Pontos: 6 | Cartas Puxadas: 1

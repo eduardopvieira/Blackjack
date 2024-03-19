@@ -7,7 +7,15 @@ import ImpLL.MyLinkedList;
 public class Mao {
     MyLinkedList<Carta> listaCartas = new MyLinkedList<>();
 
-    public Mao() {}
+    private boolean isDealer;
+
+    public Mao() {
+        this.isDealer = false;
+    }
+
+    public Mao(boolean isDealer) {
+        this.isDealer = isDealer;
+    }
 
     public int getSomaTotal() {
         int somaTotal = 0;
@@ -76,7 +84,12 @@ public class Mao {
     }
 
     public void mostraMao(){
-        System.out.println("Sua mão atual é:");
+
+        if(isDealer == true){
+            System.out.println("Mão atual do Dealer é:");
+        } else{
+            System.out.println("Sua mão atual é:");
+        }
 
         String maoFinal = "";
 

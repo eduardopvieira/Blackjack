@@ -17,12 +17,16 @@ public class BlackJack {
     public Pontuacao comecarPartida(int jogadorAtual) throws MyException {
 
         Mao mao = new Mao();
+        Mao maoDealer = new Mao(true);
         boolean continuar = true;       //vê se o player decidiu parar
         int decisao;                    //vê se o player decidiu puxar outra carta ou parar
 
         Pilha<Carta> mesa = prepararMesa();
         Scanner sc = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
+        
+        maoDealer.adicionarCarta(mesa.pop());
+        maoDealer.mostraMao();
         
         //PUXAR PRIMEIRA CARTA
         Carta primeiraCarta = mesa.pop();
@@ -43,6 +47,8 @@ public class BlackJack {
                 case 1:
                     Carta c = mesa.pop();
                     mao.adicionarCarta(c);
+
+                    maoDealer.mostraMao();
                     mao.mostraMao();
                     break;
                 case 2:
@@ -51,6 +57,40 @@ public class BlackJack {
                 default:
                     System.out.println("Numero inválido. Escolha 1 ou 2.");
             }
+        }
+
+        limparConsole();
+
+        maoDealer.adicionarCarta(mesa.pop());
+
+        if(mao.getSomaTotal() > 21){
+
+            maoDealer.mostraMao();
+            mao.mostraMao();
+
+            System.out.println("Voce perdeu");
+
+        } else if (mao.getSomaTotal() < 21 & mao.getSomaTotal() > maoDealer.getSomaTotal() ){
+
+            maoDealer.mostraMao();
+            mao.mostraMao();
+
+            System.out.println("Voce Venceu");
+
+        } else if (mao.getSomaTotal() == 21 & mao.getSomaTotal() > maoDealer.getSomaTotal()){
+
+            maoDealer.mostraMao();
+            mao.mostraMao();
+
+            System.out.println("BLACKJACK");
+
+        } else if (mao.getSomaTotal() <= 21 & mao.getSomaTotal() == maoDealer.getSomaTotal()){
+
+            maoDealer.mostraMao();
+            mao.mostraMao();
+
+            System.out.println("Empate");
+
         }
 
         Historico historico = new Historico();
