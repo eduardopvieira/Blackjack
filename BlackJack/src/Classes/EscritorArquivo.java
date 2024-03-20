@@ -3,10 +3,12 @@ import java.io.*;
 
 public class EscritorArquivo {
 
+    public static final String amarelo = "\u001B[33m";
+    public static final String reset = "\u001B[0m"; 
+    
     public EscritorArquivo(){}
 
     public void escreverPontuacoes(Pontuacao[] pontuacoes) throws IOException {
-        //TODO ajeitar essa poha
         try (Writer writer = new OutputStreamWriter(new FileOutputStream("BlackJack/src/Saida/pontuacoes.txt"))) {
             int qtdJogadores = pontuacoes.length;
             for (int i = 0; i < qtdJogadores; i++) {
@@ -15,7 +17,7 @@ public class EscritorArquivo {
                                   "Pontos: " + pt.getPontos() + " | Cartas Puxadas: " + pt.getCartas() + "\n";
                 writer.write(escrever);
             }
-            System.out.println("Pontuações escritas com sucesso.");
+            System.out.println(amarelo + "Pontuações escritas com sucesso." + reset);
         }
     }
 }

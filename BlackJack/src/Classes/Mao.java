@@ -86,7 +86,7 @@ public class Mao {
     public void mostraMao(){
 
         if(isDealer == true){
-            System.out.println("Mão atual do Dealer é:");
+            System.out.println("Mão atual do Dealer é: " + this.getSomaTotal());
         } else{
             System.out.println("Sua mão atual é:");
         }

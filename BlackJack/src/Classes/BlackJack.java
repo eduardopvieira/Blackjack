@@ -10,6 +10,9 @@ public class BlackJack {
     public static final String reset = "\u001B[0m"; 
     public static final String roxo = "\u001B[35m"; 
     public static final String vermelho = "\u001B[31m"; 
+    public static final String verde = "\u001B[32m";
+    public static final String amarelo = "\u001B[33m";
+
 
 
     public BlackJack() {}; //Construtor
@@ -65,11 +68,13 @@ public class BlackJack {
             maoDealer.adicionarCarta(mesa.pop());
 
             maoDealer.mostraMao();
+            System.out.println("Valor: " + maoDealer.getSomaTotal());
             mao.mostraMao();
+            System.out.println("Valor: " + mao.getSomaTotal());
 
             System.out.println("Pressione Enter para continuar");
             // Limpando Buffer
-            sc.nextLine();
+            //sc.nextLine();
     
             // Pausando o jogo e esperando o User apertar enter
             sc.nextLine();
@@ -84,14 +89,14 @@ public class BlackJack {
             maoDealer.mostraMao();
             mao.mostraMao();
 
-            System.out.println("Voce perdeu");
+            //System.out.println("Voce perdeu");
 
         } else if (maoDealer.getSomaTotal() > 21 ){
 
             maoDealer.mostraMao();
             mao.mostraMao();
 
-            System.out.println("Voce Venceu");
+            //System.out.println("Voce Venceu");
 
         } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()){
 
@@ -109,17 +114,17 @@ public class BlackJack {
 
         }
 
-        System.out.println("Pressione Enter para continuar");
+        //System.out.println("Pressione Enter para continuar");
         // Limpando Buffer
-        sc.nextLine();
+        //sc.nextLine();
 
         // Pausando o jogo e esperando o User apertar enter
-        sc.nextLine();
+        //sc.nextLine();
+
+        fimDeJogo(mao.getSomaTotal(),mesa, maoDealer.getSomaTotal());
 
         Historico historico = new Historico();
         historico.gravarHistorico(jogadorAtual, mao.maoFinal());
-
-        fimDeJogo(mao.getSomaTotal(),mesa);
 
         System.out.println("Pressione Enter para continuar");
         // Limpando Buffer
@@ -147,28 +152,46 @@ public class BlackJack {
         return pilhaCartas;
     }
 
-    public void fimDeJogo(int somaTotal, Pilha<Carta> mesa) throws MyException {
+    public void fimDeJogo(int somaPlayer, Pilha<Carta> mesa, int somaDealer) throws MyException {
         System.out.println(vermelho + "=-=-=-=-=-=-=-= FIM DE JOGO =-=-=-=-=-=-=-=" + reset);
-
-        System.out.println("Você encerrou com uma soma de " + somaTotal);
-
-        if (somaTotal < 21) {
+    
+        System.out.println("Você encerrou com um valor total de " + verde + somaPlayer + reset);
+        System.out.println("O dealer encerrou com um valor total de " + vermelho + somaDealer + reset);
+        System.out.println("");
+    
+        if (somaPlayer <= 21) {
             Carta prox = mesa.peek();
-            int valorHipotetico = somaTotal + prox.getValor();
-
-            System.out.println("A proxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
-
-            if (valorHipotetico > 21) {
-                System.out.println("Você teria perdido se tivesse continuado. Ainda bem que parou.");
+            int valorHipotetico = somaPlayer + prox.getValor();
+    
+            System.out.println("A próxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
+    
+            if (valorHipotetico == 21) {
+                System.out.println("Você conseguiu exatamente 21. Você venceu!");
+                return;
             } else if (valorHipotetico < 21) {
                 System.out.println("Você não teria perdido se tivesse continuado. Medroso.");
             } else {
-                System.out.println("Você teria conseguido exatamente 21 se tivesse continuado. Deu azar.");
+                System.out.println("Você teria perdido se tivesse continuado. Ainda bem que parou.");
             }
-        } else if (somaTotal == 21) {
-            System.out.println("Conseguiu exatamente 21. Você venceu.");
         }
-
+        System.out.println("");
+    
+        if (somaDealer > 21) {
+            System.out.println("O dealer estourou. " + verde + "Você ganhou!" + reset);
+        } else if (somaDealer == 21) {
+            System.out.println("O dealer conseguiu exatamente 21." + vermelho + " O dealer ganhou!" + reset);
+        } else if (somaPlayer <= 21) {
+            if (somaDealer > somaPlayer) {
+                System.out.println("O dealer está mais próximo de 21 que você." + vermelho + " O dealer ganhou!" + reset);
+            } else if (somaDealer == somaPlayer) {
+                System.out.println("Ambos têm o mesmo valor." + amarelo + " Empate!" + reset);
+            } else {
+                System.out.println("Você está mais próximo de 21 que o dealer." + verde +" Você ganhou!" + reset);
+            }
+        } else {
+            System.out.println("Você ultrapassou 21." + vermelho + " Você perdeu!" + reset);
+        }
+        System.out.println("");
     }
 
     public static void limparConsole() {
