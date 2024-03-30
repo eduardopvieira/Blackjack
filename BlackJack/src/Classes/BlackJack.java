@@ -1,9 +1,22 @@
 package Classes;
 import ImpPilha.Pilha;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashSet;
 import java.util.Scanner;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import Exception.MyException;
+import ImpLL.MyLinkedList;
 
 public class BlackJack {
 
@@ -13,18 +26,65 @@ public class BlackJack {
     public static final String verde = "\u001B[32m";
     public static final String amarelo = "\u001B[33m";
 
+    int boardWidth = 800;
+    int boardHeight = boardWidth;
+
+    int cardWidth = 110;
+    int cardHeight = 154;
+
+    Pilha<Carta> mesa;
+
+    Mao mao = new Mao();
+    Mao maoDealer = new Mao(true);
+
+    JFrame frame = new JFrame("Blackjack");
+    JPanel gamePanel = new JPanel(){
+        @Override
+        public void paintComponent(Graphics g){
+            super.paintComponent(g);
+
+            try {
+                // Escrevendo uma carta
+                Image hiddenCardImg = new ImageIcon(getClass().getResource("./cards/BACK.png")).getImage();
+                g.drawImage(hiddenCardImg, 20, 20, cardWidth, cardHeight, null);
+
+                MyLinkedList<Carta> cartasDealer = maoDealer.getListaCartas();
+
+                for (int i = 0; i < cartasDealer.getSize(); i++) {
+                    Carta carta = cartasDealer.get(i);
+                    Image cardImg = new ImageIcon(getClass().getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png")).getImage();
+                    g.drawImage(cardImg, cardWidth + 25 + (cardWidth + 5)*i, 20 , cardWidth, cardHeight, null);
+                }
+
+                MyLinkedList<Carta> cartasPlayer = mao.getListaCartas();
+
+                for (int i = 0; i < cartasPlayer.getSize(); i++) {
+                    Carta carta = cartasPlayer.get(i);
+                    Image cardImg = new ImageIcon(getClass().getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png")).getImage();
+                    g.drawImage(cardImg, 20 + (cardWidth + 5)*i, 320 , cardWidth, cardHeight, null);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        }
+    };
+    JPanel buttonPanel = new JPanel();
+    JButton hiButton = new JButton("Hit");
+    JButton stayButton = new JButton("Parar");
 
 
     public BlackJack() {}; //Construtor
 
-    public Pontuacao comecarPartida(int jogadorAtual) throws MyException {
+    public Pontuacao comecarPartida() throws MyException {
 
-        Mao mao = new Mao();
-        Mao maoDealer = new Mao(true);
+
         boolean continuar = true;       //vê se o player decidiu parar
         int decisao;                    //vê se o player decidiu puxar outra carta ou parar
 
-        Pilha<Carta> mesa = prepararMesa();
+        this.mesa = prepararMesa();
         Scanner sc = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
         
@@ -32,16 +92,47 @@ public class BlackJack {
         maoDealer.mostraMao();
         
         //PUXAR PRIMEIRA CARTA
-        Carta primeiraCarta = mesa.pop();
-        mao.adicionarCarta(primeiraCarta);
+        mao.adicionarCarta(mesa.pop());
         mao.mostraMao();
+
+        frame.setVisible(true);
+        frame.setSize(boardWidth,boardHeight);
+        frame.setLocation(400,400);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        gamePanel.setLayout(new BorderLayout());
+        gamePanel.setBackground(new Color(53,101,77));
+        frame.add(gamePanel);
+
+        hiButton.setFocusable(false);
+        buttonPanel.add(hiButton);
+        stayButton.setFocusable(false);
+        buttonPanel.add(stayButton);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
+
+        hiButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                try {
+                    Carta c;
+                    c = mesa.pop();
+                    mao.adicionarCarta(c);
+                } catch (MyException e1) {
+                    e1.printStackTrace();
+                }
+                gamePanel.repaint();
+            }
+        });
+
+        gamePanel.repaint();
+
 
         while (mao.getSomaTotal() < 21 && continuar) {
             System.out.println(roxo + "=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=" + reset);
             System.out.println("VALOR ATUAL: " + mao.getSomaTotal());
             System.out.println("Puxar carta?");
             System.out.println("1 - Puxar || 2 - Parar");
-            decisao = sc.nextInt();
+            decisao = 2;
 
             System.out.print("\033[H\033[2J");
             limparConsole();
@@ -77,7 +168,7 @@ public class BlackJack {
             //sc.nextLine();
     
             // Pausando o jogo e esperando o User apertar enter
-            sc.nextLine();
+            // sc.nextLine();
     
             System.out.println("Continuando a execução...");
         }
@@ -124,7 +215,7 @@ public class BlackJack {
         fimDeJogo(mao.getSomaTotal(),mesa, maoDealer.getSomaTotal());
 
         Historico historico = new Historico();
-        historico.gravarHistorico(jogadorAtual, mao.maoFinal());
+        historico.gravarHistorico(1, mao.maoFinal());
 
         System.out.println("Pressione Enter para continuar");
         // Limpando Buffer

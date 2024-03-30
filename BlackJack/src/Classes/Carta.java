@@ -18,6 +18,30 @@ public class Carta {
         }
     }
 
+    public String conversorNaipe(){
+
+        String Naipe = "";
+
+        switch (getNaipe()) {
+            case "Copas":
+                Naipe = "H"; //"\u2665";
+                break;
+            case "Paus":
+                Naipe = "C"; //"\u2663";
+                break;
+            case "Espadas":
+                Naipe = "S"; // "\u2660";
+                break;
+            case "Ouros":
+                Naipe = "D";//\u2666";
+                break;
+            default:
+                break;
+        }
+
+        return Naipe;
+    }
+
     public void setNaipe(String naipe) {
         if (naipe.equals("Copas") || naipe.equals("Paus") || naipe.equals("Espadas") || naipe.equals("Ouros")) {
             this.naipe = naipe;

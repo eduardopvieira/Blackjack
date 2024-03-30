@@ -29,6 +29,24 @@ public class MyLinkedList<T> implements InterfaceLinkedList<T>, Iterable<T> {
         this.size = 0;
     }
 
+    public T get(int indice){
+        Node temp = head;
+
+        if(isEmpty() != true){
+            T element = temp.data;
+
+            for (int i = 0; i < indice + 1; i++) {
+                temp = temp.next;
+                element = temp.data;
+            }
+        } else {
+            T element = temp.data;
+            System.out.println("Linked List vazia.");
+            return null;
+        }
+        
+        return element;
+    }
     
     
     @Override
