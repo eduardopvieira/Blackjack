@@ -32,6 +32,8 @@ public class BlackJack {
     int cardWidth = 110;
     int cardHeight = 154;
 
+    String somatorioMao = "Valor total na mão: ";
+
     Pilha<Carta> mesa;
 
     Mao mao = new Mao();
@@ -64,6 +66,25 @@ public class BlackJack {
                     g.drawImage(cardImg, 20 + (cardWidth + 5)*i, 320 , cardWidth, cardHeight, null);
                 }
 
+
+                
+                Integer maoTotal = mao.getSomaTotal();
+
+                String somatorioMao = "Valor total na mão:" + maoTotal.toString(); 
+
+                g.setFont(new Font("Arial", Font.PLAIN, 30));
+                g.setColor(Color.white);
+                g.drawString(somatorioMao, 10, 520);
+
+
+                Integer maoTotalDealer = maoDealer.getSomaTotal();
+
+                String somatorioMaoDealer = "Valor total na mão:" + maoTotalDealer.toString(); 
+
+                g.setFont(new Font("Arial", Font.PLAIN, 30));
+                g.setColor(Color.white);
+                g.drawString(somatorioMaoDealer, 0, 210);
+
                 if (!stayButton.isEnabled() || mao.getSomaTotal() >= 21) {
 
                     hiButton.setEnabled(false);
@@ -75,17 +96,20 @@ public class BlackJack {
 
                         message = "Voce perdeu";
             
+
                         System.out.println("Voce perdeu");
             
                     } else if (maoDealer.getSomaTotal() > 21 ){
             
                         message = "Voce Venceu";
+
             
                         System.out.println("Voce Venceu");
             
                     } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()){
             
                         message = "BLACKJACK";
+
             
                         System.out.println("BLACKJACK");
             
@@ -93,13 +117,15 @@ public class BlackJack {
             
                         message = "Empate";
 
+
+
                         System.out.println("Empate");
             
                     }
 
                     g.setFont(new Font("Arial", Font.PLAIN, 30));
                     g.setColor(Color.white);
-                    g.drawString(message, 220, 250);
+                    g.drawString(message, 400, 250);
 
                 }   
 
@@ -180,43 +206,6 @@ public class BlackJack {
 
         gamePanel.repaint();
 
-
-        if(mao.getSomaTotal() > 21 || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)){
-
-            maoDealer.mostraMao();
-            mao.mostraMao();
-
-            //System.out.println("Voce perdeu");
-
-        } else if (maoDealer.getSomaTotal() > 21 ){
-
-            maoDealer.mostraMao();
-            mao.mostraMao();
-
-            //System.out.println("Voce Venceu");
-
-        } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()){
-
-            maoDealer.mostraMao();
-            mao.mostraMao();
-
-            System.out.println("BLACKJACK");
-
-        } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()){
-
-            maoDealer.mostraMao();
-            mao.mostraMao();
-
-            System.out.println("Empate");
-
-        }
-
-        //System.out.println("Pressione Enter para continuar");
-        // Limpando Buffer
-        //sc.nextLine();
-
-        // Pausando o jogo e esperando o User apertar enter
-        //sc.nextLine();
 
         fimDeJogo(mao.getSomaTotal(),mesa, maoDealer.getSomaTotal());
 
