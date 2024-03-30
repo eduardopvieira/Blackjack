@@ -29,23 +29,36 @@ public class MyLinkedList<T> implements InterfaceLinkedList<T>, Iterable<T> {
         this.size = 0;
     }
 
-    public T get(int indice){
-        Node temp = head;
+    // public T get(int indice){
+    //     Node temp = head;
 
-        if(isEmpty() != true){
-            T element = temp.data;
+    //     if(isEmpty() != true){
+    //         T element = temp.data;
 
-            for (int i = 0; i < indice + 1; i++) {
-                temp = temp.next;
-                element = temp.data;
-            }
-        } else {
-            T element = temp.data;
-            System.out.println("Linked List vazia.");
-            return null;
-        }
+    //         for (int i = 0; i < indice + 1; i++) {
+    //             temp = temp.next;
+    //             element = temp.data;
+    //         }
+    //     } else {
+    //         T element = temp.data;
+    //         System.out.println("Linked List vazia.");
+    //         return null;
+    //     }
         
-        return element;
+    //     return element;
+    // }
+
+
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Índice inválido: " + index);
+        }
+
+        Node current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
     }
     
     

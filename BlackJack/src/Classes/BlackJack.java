@@ -3,12 +3,12 @@ import ImpPilha.Pilha;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashSet;
-import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,7 +26,7 @@ public class BlackJack {
     public static final String verde = "\u001B[32m";
     public static final String amarelo = "\u001B[33m";
 
-    int boardWidth = 800;
+    int boardWidth = 600;
     int boardHeight = boardWidth;
 
     int cardWidth = 110;
@@ -64,6 +64,45 @@ public class BlackJack {
                     g.drawImage(cardImg, 20 + (cardWidth + 5)*i, 320 , cardWidth, cardHeight, null);
                 }
 
+                if (!stayButton.isEnabled() || mao.getSomaTotal() >= 21) {
+
+                    hiButton.setEnabled(false);
+                    stayButton.setEnabled(false);
+
+                    String message = "";
+
+                    if(mao.getSomaTotal() > 21 || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)){
+
+                        message = "Voce perdeu";
+            
+                        System.out.println("Voce perdeu");
+            
+                    } else if (maoDealer.getSomaTotal() > 21 ){
+            
+                        message = "Voce Venceu";
+            
+                        System.out.println("Voce Venceu");
+            
+                    } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()){
+            
+                        message = "BLACKJACK";
+            
+                        System.out.println("BLACKJACK");
+            
+                    } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()){
+            
+                        message = "Empate";
+
+                        System.out.println("Empate");
+            
+                    }
+
+                    g.setFont(new Font("Arial", Font.PLAIN, 30));
+                    g.setColor(Color.white);
+                    g.drawString(message, 220, 250);
+
+                }   
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -81,11 +120,7 @@ public class BlackJack {
     public Pontuacao comecarPartida() throws MyException {
 
 
-        boolean continuar = true;       //vê se o player decidiu parar
-        int decisao;                    //vê se o player decidiu puxar outra carta ou parar
-
         this.mesa = prepararMesa();
-        Scanner sc = new Scanner(System.in);
         System.out.print("\033[H\033[2J");
         
         maoDealer.adicionarCarta(mesa.pop());
@@ -97,7 +132,7 @@ public class BlackJack {
 
         frame.setVisible(true);
         frame.setSize(boardWidth,boardHeight);
-        frame.setLocation(400,400);
+        frame.setLocation(400,50);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -124,56 +159,27 @@ public class BlackJack {
             }
         });
 
+         stayButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                hiButton.setEnabled(false);
+                stayButton.setEnabled(false);
+
+                while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal() && mao.getSomaTotal() <= 21) {
+        
+                    try {
+                        maoDealer.adicionarCarta(mesa.pop());
+                    } catch (MyException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+
+
+                gamePanel.repaint();
+            }
+        });
+
         gamePanel.repaint();
 
-
-        while (mao.getSomaTotal() < 21 && continuar) {
-            System.out.println(roxo + "=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=" + reset);
-            System.out.println("VALOR ATUAL: " + mao.getSomaTotal());
-            System.out.println("Puxar carta?");
-            System.out.println("1 - Puxar || 2 - Parar");
-            decisao = 2;
-
-            System.out.print("\033[H\033[2J");
-            limparConsole();
-
-            switch(decisao) {
-                case 1:
-                    Carta c = mesa.pop();
-                    mao.adicionarCarta(c);
-
-                    maoDealer.mostraMao();
-                    mao.mostraMao();
-                    break;
-                case 2:
-                    continuar = false;
-                    break;
-                default:
-                    System.out.println("Numero inválido. Escolha 1 ou 2.");
-            }
-        }
-
-        while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal() && mao.getSomaTotal() <= 21) {
-            limparConsole();
-
-            maoDealer.adicionarCarta(mesa.pop());
-
-            maoDealer.mostraMao();
-            System.out.println("Valor: " + maoDealer.getSomaTotal());
-            mao.mostraMao();
-            System.out.println("Valor: " + mao.getSomaTotal());
-
-            System.out.println("Pressione Enter para continuar");
-            // Limpando Buffer
-            //sc.nextLine();
-    
-            // Pausando o jogo e esperando o User apertar enter
-            // sc.nextLine();
-    
-            System.out.println("Continuando a execução...");
-        }
-
-        limparConsole();
 
         if(mao.getSomaTotal() > 21 || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)){
 
@@ -216,15 +222,6 @@ public class BlackJack {
 
         Historico historico = new Historico();
         historico.gravarHistorico(1, mao.maoFinal());
-
-        System.out.println("Pressione Enter para continuar");
-        // Limpando Buffer
-        sc.nextLine();
-
-        // Pausando o jogo e esperando o User apertar enter
-        sc.nextLine();
-
-        System.out.println("Continuando a execução...");
 
         Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas());
         return pt;
