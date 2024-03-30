@@ -4,6 +4,8 @@ public class Pontuacao {
     private int pontos;
     private int qtdCartas;
 
+    public Pontuacao() { }
+
     public Pontuacao(int pontos, int qtdCartas) {
         this.pontos = pontos;
         this.qtdCartas = qtdCartas;

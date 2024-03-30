@@ -39,22 +39,22 @@ public class Mao {
         this.listaCartas.addLast(carta);
     }
 
-    private String conversorNaipe(Carta carta){
+    public String conversorNaipe(Carta carta){
 
         String Naipe = "";
 
         switch (carta.getNaipe()) {
             case "Copas":
-                Naipe = "C"; //"\u2665";
+                Naipe = "H"; //"\u2665";
                 break;
             case "Paus":
-                Naipe = "P"; //"\u2663";
+                Naipe = "C"; //"\u2663";
                 break;
             case "Espadas":
-                Naipe = "E"; // "\u2660";
+                Naipe = "S"; // "\u2660";
                 break;
             case "Ouros":
-                Naipe = "O";//\u2666";
+                Naipe = "D";//\u2666";
                 break;
             default:
                 break;

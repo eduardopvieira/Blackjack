@@ -3,7 +3,6 @@ import Classes.EscritorArquivo;
 import Classes.Pontuacao;
 import Exception.MyException;
 import java.io.IOException;
-import java.util.Scanner;
 
 
 public class Main {
@@ -13,22 +12,16 @@ public class Main {
         //System.out.println("♣️♥️♠️♦️");
         BlackJack bj = new BlackJack();
 
-        System.out.print("\033[H\033[2J");
-        System.out.println("Quantos jogadores irão jogar? ");
-        Scanner scMain = new Scanner(System.in);
-
-        int qtdJogadores = scMain.nextInt();
+        // System.out.print("\033[H\033[2J");
  
-        Pontuacao[] pontuacoes = new Pontuacao[qtdJogadores];
+        Pontuacao pontuacoes;
 
-        for (int i = 0; i < qtdJogadores; i++) {
-            pontuacoes[i] =  bj.comecarPartida(i);
-        }
+        pontuacoes =  bj.comecarPartida();
+
 
         EscritorArquivo esc = new EscritorArquivo();
         esc.escreverPontuacoes(pontuacoes);
 
-        scMain.close();
     }
 }
 
