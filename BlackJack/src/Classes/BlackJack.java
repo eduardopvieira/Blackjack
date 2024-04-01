@@ -1,4 +1,5 @@
 package Classes;
+
 import ImpPilha.Pilha;
 
 import java.awt.BorderLayout;
@@ -20,9 +21,9 @@ import ImpLL.MyLinkedList;
 
 public class BlackJack {
 
-    public static final String reset = "\u001B[0m"; 
-    public static final String roxo = "\u001B[35m"; 
-    public static final String vermelho = "\u001B[31m"; 
+    public static final String reset = "\u001B[0m";
+    public static final String roxo = "\u001B[35m";
+    public static final String vermelho = "\u001B[31m";
     public static final String verde = "\u001B[32m";
     public static final String amarelo = "\u001B[33m";
 
@@ -40,9 +41,10 @@ public class BlackJack {
     Mao maoDealer = new Mao(true);
 
     JFrame frame = new JFrame("Blackjack");
-    JPanel gamePanel = new JPanel(){
+    JPanel gamePanel = new JPanel() {
+
         @Override
-        public void paintComponent(Graphics g){
+        public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
             try {
@@ -54,32 +56,33 @@ public class BlackJack {
 
                 for (int i = 0; i < cartasDealer.getSize(); i++) {
                     Carta carta = cartasDealer.get(i);
-                    Image cardImg = new ImageIcon(getClass().getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png")).getImage();
-                    g.drawImage(cardImg, cardWidth + 25 + (cardWidth + 5)*i, 20 , cardWidth, cardHeight, null);
+                    Image cardImg = new ImageIcon(getClass()
+                            .getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png"))
+                            .getImage();
+                    g.drawImage(cardImg, cardWidth + 25 + (cardWidth + 5) * i, 20, cardWidth, cardHeight, null);
                 }
 
                 MyLinkedList<Carta> cartasPlayer = mao.getListaCartas();
 
                 for (int i = 0; i < cartasPlayer.getSize(); i++) {
                     Carta carta = cartasPlayer.get(i);
-                    Image cardImg = new ImageIcon(getClass().getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png")).getImage();
-                    g.drawImage(cardImg, 20 + (cardWidth + 5)*i, 320 , cardWidth, cardHeight, null);
+                    Image cardImg = new ImageIcon(getClass()
+                            .getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png"))
+                            .getImage();
+                    g.drawImage(cardImg, 20 + (cardWidth + 5) * i, 320, cardWidth, cardHeight, null);
                 }
 
-
-                
                 Integer maoTotal = mao.getSomaTotal();
 
-                String somatorioMao = "Valor total na mão:" + maoTotal.toString(); 
+                String somatorioMao = "Valor total na mão:" + maoTotal.toString();
 
                 g.setFont(new Font("Arial", Font.PLAIN, 30));
                 g.setColor(Color.white);
                 g.drawString(somatorioMao, 10, 520);
 
-
                 Integer maoTotalDealer = maoDealer.getSomaTotal();
 
-                String somatorioMaoDealer = "Valor total na mão:" + maoTotalDealer.toString(); 
+                String somatorioMaoDealer = "Valor total na mão:" + maoTotalDealer.toString();
 
                 g.setFont(new Font("Arial", Font.PLAIN, 30));
                 g.setColor(Color.white);
@@ -92,47 +95,34 @@ public class BlackJack {
 
                     String message = "";
 
-                    if(mao.getSomaTotal() > 21 || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)){
+                    if (mao.getSomaTotal() > 21
+                            || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)) {
 
-                        message = "Voce perdeu";
-            
+                        message = "Você perdeu! Tempo de jogo:";
 
-                        System.out.println("Voce perdeu");
-            
-                    } else if (maoDealer.getSomaTotal() > 21 ){
-            
-                        message = "Voce Venceu";
+                    } else if (maoDealer.getSomaTotal() > 21) {
 
-            
-                        System.out.println("Voce Venceu");
-            
-                    } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()){
-            
+                        message = "Você venceu!";
+
+                    } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()) {
+
                         message = "BLACKJACK";
 
-            
-                        System.out.println("BLACKJACK");
-            
-                    } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()){
-            
+                    } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()) {
+
                         message = "Empate";
 
-
-
-                        System.out.println("Empate");
-            
                     }
 
                     g.setFont(new Font("Arial", Font.PLAIN, 30));
                     g.setColor(Color.white);
                     g.drawString(message, 400, 250);
 
-                }   
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
         }
     };
@@ -140,30 +130,27 @@ public class BlackJack {
     JButton hiButton = new JButton("Hit");
     JButton stayButton = new JButton("Parar");
 
-
-    public BlackJack() {}; //Construtor
+    public BlackJack() {
+    }; // Construtor
 
     public Pontuacao comecarPartida() throws MyException {
-
-
+        long startTime = System.currentTimeMillis();
         this.mesa = prepararMesa();
         System.out.print("\033[H\033[2J");
-        
+
         maoDealer.adicionarCarta(mesa.pop());
-        maoDealer.mostraMao();
-        
-        //PUXAR PRIMEIRA CARTA
+
+        // PUXAR PRIMEIRA CARTA
         mao.adicionarCarta(mesa.pop());
-        mao.mostraMao();
 
         frame.setVisible(true);
-        frame.setSize(boardWidth,boardHeight);
-        frame.setLocation(400,50);
+        frame.setSize(boardWidth, boardHeight);
+        frame.setLocation(400, 50);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         gamePanel.setLayout(new BorderLayout());
-        gamePanel.setBackground(new Color(53,101,77));
+        gamePanel.setBackground(new Color(53, 101, 77));
         frame.add(gamePanel);
 
         hiButton.setFocusable(false);
@@ -173,7 +160,7 @@ public class BlackJack {
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
         hiButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 try {
                     Carta c;
                     c = mesa.pop();
@@ -185,13 +172,14 @@ public class BlackJack {
             }
         });
 
-         stayButton.addActionListener(new ActionListener() {
+        stayButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 hiButton.setEnabled(false);
                 stayButton.setEnabled(false);
 
-                while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal() && mao.getSomaTotal() <= 21) {
-        
+                while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal()
+                        && mao.getSomaTotal() <= 21) {
+
                     try {
                         maoDealer.adicionarCarta(mesa.pop());
                     } catch (MyException e1) {
@@ -199,94 +187,44 @@ public class BlackJack {
                     }
                 }
 
-
                 gamePanel.repaint();
             }
         });
 
         gamePanel.repaint();
+        // Esperar até que o jogo termine
+        while (stayButton.isEnabled()) {
+            try {
+                Thread.sleep(100); // Adiciona um pequeno intervalo entre as verificações
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+        }
 
+        gamePanel.repaint();
 
-        fimDeJogo(mao.getSomaTotal(),mesa, maoDealer.getSomaTotal());
+        long endTime = System.currentTimeMillis();
+        double tempoTotal = endTime - startTime;
 
+        mao.maoFinal();
         Historico historico = new Historico();
-        historico.gravarHistorico(1, mao.maoFinal());
-
-        Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas());
+        Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas(), tempoTotal);
+        historico.gravarHistorico(1, mao.maoFinal(), pt);
         return pt;
     }
 
     public Pilha<Carta> prepararMesa() throws MyException {
-        Baralho todasAsCartas = new Baralho(); //Inicializa todas as cartas
-        HashSet<Carta> baralho = todasAsCartas.getBaralho(); //Cria um HashSet de todas as cartas
-        Pilha<Carta> pilhaCartas = new Pilha<>(baralho.size()); //Cria a pilha do tamanho do baralho
+        Baralho todasAsCartas = new Baralho(); // Inicializa todas as cartas
+        HashSet<Carta> baralho = todasAsCartas.getBaralho(); // Cria um HashSet de todas as cartas
+        Pilha<Carta> pilhaCartas = new Pilha<>(baralho.size()); // Cria a pilha do tamanho do baralho
 
-        //Coloca todas as cartas do baralho na pilha, porém, ela ainda não está embaralhada
+        // Coloca todas as cartas do baralho na pilha, porém, ela ainda não está
+        // embaralhada
         for (Carta carta : baralho) {
             pilhaCartas.push(carta);
         }
-        pilhaCartas.embaralharPilha(); //Agora ela ta embaralhada
+        pilhaCartas.embaralharPilha(); // Agora ela ta embaralhada
         return pilhaCartas;
-    }
-
-    public void fimDeJogo(int somaPlayer, Pilha<Carta> mesa, int somaDealer) throws MyException {
-        System.out.println(vermelho + "=-=-=-=-=-=-=-= FIM DE JOGO =-=-=-=-=-=-=-=" + reset);
-    
-        System.out.println("Você encerrou com um valor total de " + verde + somaPlayer + reset);
-        System.out.println("O dealer encerrou com um valor total de " + vermelho + somaDealer + reset);
-        System.out.println("");
-    
-        if (somaPlayer <= 21) {
-            Carta prox = mesa.peek();
-            int valorHipotetico = somaPlayer + prox.getValor();
-    
-            System.out.println("A próxima carta era um " + prox.getValor() + " de " + prox.getNaipe());
-    
-            if (valorHipotetico == 21) {
-                System.out.println("Você conseguiu exatamente 21. Você venceu!");
-                return;
-            } else if (valorHipotetico < 21) {
-                System.out.println("Você não teria perdido se tivesse continuado. Medroso.");
-            } else {
-                System.out.println("Você teria perdido se tivesse continuado. Ainda bem que parou.");
-            }
-        }
-        System.out.println("");
-    
-        if (somaDealer > 21) {
-            System.out.println("O dealer estourou. " + verde + "Você ganhou!" + reset);
-        } else if (somaDealer == 21) {
-            System.out.println("O dealer conseguiu exatamente 21." + vermelho + " O dealer ganhou!" + reset);
-        } else if (somaPlayer <= 21) {
-            if (somaDealer > somaPlayer) {
-                System.out.println("O dealer está mais próximo de 21 que você." + vermelho + " O dealer ganhou!" + reset);
-            } else if (somaDealer == somaPlayer) {
-                System.out.println("Ambos têm o mesmo valor." + amarelo + " Empate!" + reset);
-            } else {
-                System.out.println("Você está mais próximo de 21 que o dealer." + verde +" Você ganhou!" + reset);
-            }
-        } else {
-            System.out.println("Você ultrapassou 21." + vermelho + " Você perdeu!" + reset);
-        }
-        System.out.println("");
-    }
-
-    public static void limparConsole() {
-        try {
-            final String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")) {
-                // Limpa o console no Windows
-                ProcessBuilder builder = new ProcessBuilder("cmd", "/c", "cls");
-                builder.inheritIO().start().waitFor();
-            } else {
-                // Limpa o console em outros sistemas operacionais
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (final Exception e) {
-            // Tratar exceções
-        }
     }
 
 }
