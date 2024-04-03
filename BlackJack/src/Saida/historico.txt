@@ -8,3 +8,295 @@ Partida jogada em: 01/04/2024 18:25
 |  C  | |  D  | |  C  | 
 |_____| |_____| |_____| 
 
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 30 | Cartas Puxadas: 3 | Tempo: 3.288s
+
+Partida jogada em: 02/04/2024 09:23
+ _____   _____   _____  
+|7    | |K    | |10   | 
+|  C  | |  D  | |  D  | 
+|_____| |_____| |_____| 
+
+
+
+split '|' =-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 26 | Cartas Puxadas: 2 | Tempo: 7.244s
+
+Partida jogada em: 02/04/2024 09:29
+ _____   _____  
+|K    | |K    | 
+|  C  | |  S  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 25 | Cartas Puxadas: 4 | Tempo: 5.833s
+
+Partida jogada em: 02/04/2024 09:29
+ _____   _____   _____   _____  
+|2    | |9    | |A    | |K    | 
+|  C  | |  S  | |  D  | |  C  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 22 | Cartas Puxadas: 2 | Tempo: 4.414s
+
+Partida jogada em: 02/04/2024 09:29
+ _____   _____  
+|Q    | |10   | 
+|  C  | |  H  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 26 | Cartas Puxadas: 3 | Tempo: 3.755s
+
+Partida jogada em: 02/04/2024 09:29
+ _____   _____   _____  
+|2    | |Q    | |Q    | 
+|  S  | |  S  | |  H  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 16 | Cartas Puxadas: 2 | Tempo: 5.52s
+
+Partida jogada em: 02/04/2024 09:29
+ _____   _____  
+|4    | |Q    | 
+|  C  | |  C  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 29 | Cartas Puxadas: 3 | Tempo: 3.622s
+
+Partida jogada em: 02/04/2024 09:30
+ _____   _____   _____  
+|4    | |Q    | |K    | 
+|  D  | |  H  | |  S  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 23 | Cartas Puxadas: 3 | Tempo: 3.95s
+
+Partida jogada em: 02/04/2024 09:31
+ _____   _____   _____  
+|2    | |J    | |10   | 
+|  H  | |  C  | |  H  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 31 | Cartas Puxadas: 4 | Tempo: 4.392s
+
+Partida jogada em: 02/04/2024 09:31
+ _____   _____   _____   _____  
+|2    | |7    | |9    | |K    | 
+|  H  | |  D  | |  D  | |  C  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 23 | Cartas Puxadas: 4 | Tempo: 4.177s
+
+Partida jogada em: 02/04/2024 09:31
+ _____   _____   _____   _____  
+|5    | |9    | |A    | |8    | 
+|  C  | |  C  | |  D  | |  S  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 26 | Cartas Puxadas: 4 | Tempo: 3.605s
+
+Partida jogada em: 02/04/2024 09:32
+ _____   _____   _____   _____  
+|2    | |6    | |7    | |J    | 
+|  C  | |  H  | |  C  | |  S  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 29 | Cartas Puxadas: 4 | Tempo: 2.171s
+
+Partida jogada em: 02/04/2024 09:35
+ _____   _____   _____   _____  
+|3    | |K    | |4    | |9    | 
+|  H  | |  C  | |  D  | |  D  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 19 | Cartas Puxadas: 2 | Tempo: 8.331s
+
+Partida jogada em: 02/04/2024 09:42
+ _____   _____  
+|9    | |10   | 
+|  S  | |  C  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 10 | Cartas Puxadas: 2 | Tempo: 3.043s
+
+Partida jogada em: 02/04/2024 10:48
+ _____   _____  
+|8    | |2    | 
+|  C  | |  S  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 21 | Cartas Puxadas: 2 | Tempo: 3.065s
+
+Partida jogada em: 02/04/2024 10:53
+ _____   _____  
+|J    | |10   | 
+|  S  | |  D  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 1 | Cartas Puxadas: 1 | Tempo: 2.27s
+
+Partida jogada em: 02/04/2024 10:55
+ _____  
+|A    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 21 | Cartas Puxadas: 4 | Tempo: 4.486s
+
+Partida jogada em: 02/04/2024 11:08
+ _____   _____   _____   _____  
+|A    | |9    | |8    | |3    | 
+|  C  | |  C  | |  H  | |  C  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 26 | Cartas Puxadas: 3 | Tempo: 7.56s
+
+Partida jogada em: 02/04/2024 11:15
+ _____   _____   _____  
+|J    | |9    | |6    | 
+|  H  | |  S  | |  C  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 13 | Cartas Puxadas: 1 | Tempo: 0.067s
+
+Partida jogada em: 02/04/2024 11:27
+ _____  
+|K    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 21 | Cartas Puxadas: 3 | Tempo: 4.606s
+
+Partida jogada em: 03/04/2024 10:09
+ _____   _____   _____  
+|8    | |3    | |10   | 
+|  C  | |  C  | |  C  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 22 | Cartas Puxadas: 3 | Tempo: 8.539s
+
+Partida jogada em: 03/04/2024 10:18
+ _____   _____   _____  
+|9    | |A    | |Q    | 
+|  C  | |  H  | |  C  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 20 | Cartas Puxadas: 2 | Tempo: 8.545s
+
+Partida jogada em: 03/04/2024 11:06
+ _____   _____  
+|8    | |Q    | 
+|  S  | |  H  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 15 | Cartas Puxadas: 2 | Tempo: 7.132s
+
+Partida jogada em: 03/04/2024 11:06
+ _____   _____  
+|Q    | |3    | 
+|  D  | |  D  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 16 | Cartas Puxadas: 4 | Tempo: 8.925s
+
+Partida jogada em: 03/04/2024 11:07
+ _____   _____   _____   _____  
+|A    | |10   | |2    | |3    | 
+|  D  | |  S  | |  D  | |  D  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 17 | Cartas Puxadas: 3 | Tempo: 10.296s
+
+Partida jogada em: 03/04/2024 11:09
+ _____   _____   _____  
+|8    | |5    | |4    | 
+|  D  | |  D  | |  D  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 16 | Cartas Puxadas: 3 | Tempo: 8.429s
+
+Partida jogada em: 03/04/2024 11:10
+ _____   _____   _____  
+|9    | |A    | |6    | 
+|  S  | |  H  | |  H  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 17 | Cartas Puxadas: 3 | Tempo: 7.595s
+
+Partida jogada em: 03/04/2024 11:12
+ _____   _____   _____  
+|6    | |4    | |7    | 
+|  D  | |  C  | |  D  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 20 | Cartas Puxadas: 3 | Tempo: 8.331s
+
+Partida jogada em: 03/04/2024 11:13
+ _____   _____   _____  
+|A    | |8    | |J    | 
+|  H  | |  H  | |  C  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador 1:
+Pontos: 1 | Cartas Puxadas: 1 | Tempo: 7.865s
+
+Partida jogada em: 03/04/2024 11:34
+ _____  
+|A    | 
+|  S  | 
+|_____| 
+
