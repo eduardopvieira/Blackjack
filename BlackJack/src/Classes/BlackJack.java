@@ -14,6 +14,7 @@ import java.util.HashSet;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -145,8 +146,14 @@ public class BlackJack {
 
                         historicoJPanel.setLayout(new BorderLayout());
                         historicoJPanel.setBackground(new Color(244, 244, 244));
+                        historicoJPanel.setBackground(new Color(53, 101, 77));
                         historico.add(historicoJPanel);
 
+                        JLabel label = new JLabel(nomeJogador);
+                        label.setFont(new Font("Arial", Font.PLAIN, 30));
+                        label.setForeground(Color.WHITE);
+
+                        historicoJPanel.add(label);
     
                     }
     
