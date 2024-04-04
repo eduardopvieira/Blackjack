@@ -16,7 +16,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import Exception.MyException;
@@ -47,13 +46,15 @@ public class BlackJack {
     Mao mao = new Mao();
     Mao maoDealer = new Mao(true);
 
-    public JFrame frame = new JFrame("Blackjack"){
-        String inputValue = JOptionPane.showInputDialog(this,"Digite seu nome seu maldito:");
-
-        
-    };
+    public JFrame frame = new JFrame("Blackjack"){};
 
     public JFrame historico = new JFrame("Historico");
+
+    public String popout(){
+        String nomeJogador = JOptionPane.showInputDialog("Digite seu nome seu maldito:");
+
+        return nomeJogador;
+    };
 
 
     JPanel gamePanel = new JPanel() {
@@ -173,11 +174,18 @@ public class BlackJack {
         // PUXAR PRIMEIRA CARTA
         mao.adicionarCarta(mesa.pop());
 
+        nomeJogador = popout();  
+        
+        if(nomeJogador == null){
+            System.exit(0);
+        }
+
         frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocation(400, 50);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
 
         gamePanel.setLayout(new BorderLayout());
         gamePanel.setBackground(new Color(53, 101, 77));
