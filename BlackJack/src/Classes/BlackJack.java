@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import javax.swing.ImageIcon;
@@ -56,6 +57,8 @@ public class BlackJack {
 
         return nomeJogador;
     };
+
+    public LeitorHistorico leitor = new LeitorHistorico();
 
 
     JPanel gamePanel = new JPanel() {
@@ -149,11 +152,24 @@ public class BlackJack {
                         historicoJPanel.setBackground(new Color(53, 101, 77));
                         historico.add(historicoJPanel);
 
-                        JLabel label = new JLabel(nomeJogador);
-                        label.setFont(new Font("Arial", Font.PLAIN, 30));
-                        label.setForeground(Color.WHITE);
+                        String caminho = "./Saida/historico.txt";
 
-                        historicoJPanel.add(label);
+                        ArrayList<Pontuacao> listaJogadores = leitor.lerArquivo(caminho);
+                        int tamanhoLista = listaJogadores.size();
+
+                        JLabel label[] = new JLabel[tamanhoLista];
+
+
+                        for (int i = 0; i < tamanhoLista; i++) {
+
+                            label[i] = new JLabel(listaJogadores.get(i).toString());
+                            label[i].setFont(new Font("Arial", Font.PLAIN, 30));
+                            label[i].setForeground(Color.WHITE);
+
+                            System.out.println(listaJogadores.get(i).toString());
+
+                            historicoJPanel.add(label[i]);
+                        }
     
                     }
     

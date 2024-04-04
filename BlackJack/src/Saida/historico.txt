@@ -1,77 +1,27 @@
 =-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador 1:
-Pontos: 20 | Cartas Puxadas: 2 | Tempo: 6.481s
+Jogador:teste;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
 
-Partida jogada em: 04/04/2024 09:03
- _____   _____  
-|10   | |10   | 
-|  H  | |  C  | 
-|_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador 1:
-Pontos: 25 | Cartas Puxadas: 3 | Tempo: 4.896s
-
-Partida jogada em: 04/04/2024 09:04
- _____   _____   _____  
-|3    | |Q    | |10   | 
-|  D  | |  D  | |  H  | 
-|_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador 1:
-Pontos: 13 | Cartas Puxadas: 1 | Tempo: 0.047s
-
-Partida jogada em: 04/04/2024 09:04
- _____  
-|K    | 
-|  C  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador 1:
-Pontos: 12 | Cartas Puxadas: 1 | Tempo: 0.055s
-
-Partida jogada em: 04/04/2024 09:04
- _____  
-|Q    | 
-|  H  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador 1:
-Pontos: 9 | Cartas Puxadas: 1 | Tempo: 0.074s
-
-Partida jogada em: 04/04/2024 09:10
- _____  
-|9    | 
-|  C  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador: eduardo | Pontos: 4 | Cartas Puxadas: 1 | Tempo: 3.713s
-
-Partida jogada em: 04/04/2024 09:39
- _____  
-|4    | 
-|  C  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador: jamalPontos: 12 | Cartas Puxadas: 1 | Tempo: 2.452s
-
-Partida jogada em: 04/04/2024 09:54
- _____  
-|Q    | 
-|  C  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:kaas | Pontos:12|Cartas Puxadas:1|Tempo: 3.328s
-
-Partida jogada em: 04/04/2024 10:00
+Partida jogada em: 04/04/2024 10:45
  _____  
 |Q    | 
 |  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:teste;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 10:51
+ _____  
+|9    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:teste;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 10:52
+ _____  
+|10   | 
+|  D  | 
 |_____| 
 

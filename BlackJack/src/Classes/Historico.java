@@ -20,7 +20,7 @@ public class Historico {
             writer.write("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
             writer.newLine();
 
-            String escrever = "Jogador:" + nomeJogador + "|Pontos:" + pt.getPontos() + "|Cartas Puxadas:" + pt.getCartas() + "|Tempo: " + pt.getTempo() + "s\n";
+            String escrever = "Jogador:" + nomeJogador + ";Pontos:" + pt.getPontos() + ";Cartas Puxadas:" + pt.getCartas() + ";Tempo: " + pt.getTempo() + ";s\n";
             writer.write(escrever);
             writer.newLine();
             writer.write("Partida jogada em: " + strData);

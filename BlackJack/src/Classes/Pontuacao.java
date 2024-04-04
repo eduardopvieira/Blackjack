@@ -17,20 +17,45 @@ public class Pontuacao {
 
     public Pontuacao(String nome, int pontos, int qtdCartas, double tempo) {
         this.nome = nome;
-        this.pontos = pontos;
+        // this.pontos = pontos;
         this.qtdCartas = qtdCartas;
-        this.tempo = tempo;
+        // this.tempo = tempo;
     }
 
+    
+
+    
+
+    // public int getPontos() {
+    //     // return this.pontos;
+    // }
+
     public int getPontos() {
-        return this.pontos;
+        return pontos;
+    }
+
+    public int getQtdCartas() {
+        return qtdCartas;
+    }
+
+    public double getTempo() {
+        return tempo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pontuacao [nome=" + nome + ", pontos=" + pontos + ", tempo=" + tempo + "]";
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public int getCartas() {
         return this.qtdCartas;
     }
 
-    public double getTempo() {
-        return this.tempo / 1000;
-    }
+    // public double getTempo() {
+    //     // return this.tempo / 1000;
+    // }
 }
