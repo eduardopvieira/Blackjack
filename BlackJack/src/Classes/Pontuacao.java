@@ -9,7 +9,8 @@ public class Pontuacao {
     public Pontuacao() {
     }
 
-    public Pontuacao(int pontos, int qtdCartas, double tempo) {
+    public Pontuacao(String nome, int pontos, int qtdCartas, double tempo) {
+        this.nome = nome;
         this.pontos = pontos;
         this.qtdCartas = qtdCartas;
         this.tempo = tempo;

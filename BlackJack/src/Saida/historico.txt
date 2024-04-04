@@ -48,3 +48,13 @@ Partida jogada em: 04/04/2024 09:10
 |  C  | 
 |_____| 
 
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador: eduardo
+Pontos: 4 | Cartas Puxadas: 1 | Tempo: 3.713s
+
+Partida jogada em: 04/04/2024 09:39
+ _____  
+|4    | 
+|  C  | 
+|_____| 
+

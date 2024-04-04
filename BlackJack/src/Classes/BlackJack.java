@@ -234,8 +234,8 @@ public class BlackJack {
 
         mao.maoFinal();
         Historico historico = new Historico();
-        Pontuacao pt = new Pontuacao(mao.getSomaTotal(), mao.getQtdCartas(), tempoTotal);
-        historico.gravarHistorico(1, mao.maoFinal(), pt);
+        Pontuacao pt = new Pontuacao(nomeJogador, mao.getSomaTotal(), mao.getQtdCartas(), tempoTotal);
+        historico.gravarHistorico(nomeJogador, mao.maoFinal(), pt);
         return pt;
     }
 

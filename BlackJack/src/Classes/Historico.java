@@ -10,7 +10,7 @@ public class Historico {
     Historico() {
     }
 
-    void gravarHistorico(int numJogador, String cartasJogadas, Pontuacao pt) {
+    void gravarHistorico(String nomeJogador, String cartasJogadas, Pontuacao pt) {
         LocalDateTime data = LocalDateTime.now();
 
         String strData = data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
@@ -20,7 +20,7 @@ public class Historico {
             writer.write("=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=");
             writer.newLine();
 
-            String escrever = "Jogador " + (numJogador) + ":\n" +
+            String escrever = "Jogador: " + nomeJogador + "\n" +
                     "Pontos: " + pt.getPontos() + " | Cartas Puxadas: " + pt.getCartas() + " | Tempo: " + pt.getTempo()
                     + "s\n";
             writer.write(escrever);
