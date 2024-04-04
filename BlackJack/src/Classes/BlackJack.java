@@ -4,7 +4,6 @@ import ImpPilha.Pilha;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -159,10 +158,8 @@ public class BlackJack {
     JPanel historicoJPanel = new JPanel();
     JPanel buttonPanel = new JPanel();
     JTextField textField = new JTextField();
-    JButton playButton = new JButton("Jogar");
     JButton hiButton = new JButton("Hit");
     JButton stayButton = new JButton("Parar");
-    JTextArea textArea = new JTextArea("Insira o nome do jogador:");
 
     public BlackJack() {
     }; // Construtor
@@ -170,7 +167,6 @@ public class BlackJack {
     public Pontuacao comecarPartida() throws MyException {
         long startTime = System.currentTimeMillis();
         this.mesa = prepararMesa();
-        System.out.print("\033[H\033[2J");
 
         maoDealer.adicionarCarta(mesa.pop());
 
@@ -183,39 +179,9 @@ public class BlackJack {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-   
-
-        JPanel inputPanel = new JPanel();
-        inputPanel.add(textArea);
-        textField.setPreferredSize(new Dimension(200, 30));
-        inputPanel.add(textField);
-        inputPanel.add(playButton);
-        frame.add(inputPanel, BorderLayout.NORTH);
-
-        playButton.addActionListener(new ActionListener() {
-                
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    nomeJogador = textField.getText(); // Obtém o texto do JTextField
-                    JOptionPane.showMessageDialog(gamePanel, "Texto recebido: " + nomeJogador); // Exibe uma caixa de diálogo com o texto                    
-                
-                    frame.remove(inputPanel);;
-
-                    frame.revalidate();
-
-                    frame.repaint();
-                }
-
-        });
-
-
         gamePanel.setLayout(new BorderLayout());
         gamePanel.setBackground(new Color(53, 101, 77));
         frame.add(gamePanel);
-
-        // gamePanel.setLayout(new BorderLayout());
-        // gamePanel.setBackground(new Color(53, 101, 77));
-        // frame.add(gamePanel);
 
         hiButton.setFocusable(false);
         buttonPanel.add(hiButton);
@@ -223,7 +189,7 @@ public class BlackJack {
         buttonPanel.add(stayButton);
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
-        hiButton.addActionListener(new ActionListener() {
+        hiButton.addActionListener(new ActionListener() { //BOTAO DE HIT
             public void actionPerformed(ActionEvent e) {
                 try {
                     Carta c;
@@ -236,7 +202,7 @@ public class BlackJack {
             }
         });
 
-        stayButton.addActionListener(new ActionListener() {
+        stayButton.addActionListener(new ActionListener() { //BOTAO DE QND PARA DE PUXAR
             public void actionPerformed(ActionEvent e) {
                 hiButton.setEnabled(false);
                 stayButton.setEnabled(false);
@@ -254,18 +220,6 @@ public class BlackJack {
                 gamePanel.repaint();
             }
         });
-
-        gamePanel.repaint();
-        // Esperar até que o jogo termine
-        while (stayButton.isEnabled()) {
-            try {
-                Thread.sleep(100); // Adiciona um pequeno intervalo entre as verificações
-            } catch (InterruptedException ex) {
-                Thread.currentThread().interrupt();
-            }
-        }
-
-        gamePanel.repaint();
 
         long endTime = System.currentTimeMillis();
         tempoTotal = endTime - startTime;
