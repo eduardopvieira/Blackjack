@@ -4,14 +4,18 @@ import ImpPilha.Pilha;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,6 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 import Exception.MyException;
 import ImpLL.MyLinkedList;
@@ -147,10 +152,19 @@ public class BlackJack {
                         historico.setResizable(false);
                         historico.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                        historicoJPanel.setLayout(new BorderLayout());
+                        Border borda = BorderFactory.createLineBorder(Color.BLACK, 2); // Cor preta e 2 pixels de largura
+
+                        historicoJPanel.setLayout(new BoxLayout(historicoJPanel, BoxLayout.Y_AXIS));
                         historicoJPanel.setBackground(new Color(244, 244, 244));
                         historicoJPanel.setBackground(new Color(53, 101, 77));
-                        historico.add(historicoJPanel);
+                        historicoJPanel.setBorder(borda);
+
+
+
+                        JLabel tituloJLabel = new JLabel("LISTA DE JOGADORES");
+                        tituloJLabel.setFont(new Font("Arial", Font.BOLD, 30));
+                        tituloJLabel.setForeground(Color.BLACK);
+                        historicoJPanel.add(tituloJLabel);
 
                         String caminho = "./Saida/historico.txt";
 
@@ -163,13 +177,20 @@ public class BlackJack {
                         for (int i = 0; i < tamanhoLista; i++) {
 
                             label[i] = new JLabel(listaJogadores.get(i).toString());
-                            label[i].setFont(new Font("Arial", Font.PLAIN, 30));
+                            label[i].setFont(new Font("Arial", Font.PLAIN, 20));
                             label[i].setForeground(Color.WHITE);
-
                             System.out.println(listaJogadores.get(i).toString());
 
                             historicoJPanel.add(label[i]);
                         }
+
+                        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+                        centerPanel.setBackground(new Color(244, 244, 244));
+                        centerPanel.setBackground(new Color(53, 101, 77));
+
+                        centerPanel.add(historicoJPanel);
+                        historico.add(centerPanel);
+
     
                     }
     

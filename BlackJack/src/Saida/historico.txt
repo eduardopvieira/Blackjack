@@ -25,3 +25,156 @@ Partida jogada em: 04/04/2024 10:52
 |  D  | 
 |_____| 
 
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:teste;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 10:56
+ _____  
+|8    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:teste123;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 10:58
+ _____  
+|2    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:teste;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 10:59
+ _____  
+|3    | 
+|  H  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:paulo;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:00
+ _____  
+|A    | 
+|  H  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:sda;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:01
+ _____  
+|3    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:teste;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:04
+ _____  
+|3    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:dsadsa;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:04
+ _____  
+|6    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:dasda;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:06
+ _____  
+|K    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:Eduardo;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:11
+ _____  
+|A    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:12
+ _____  
+|5    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:Eduardo louco;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:14
+ _____  
+|2    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:Tonio;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:15
+ _____  
+|6    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:adad;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:16
+ _____  
+|9    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:dasdas;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:18
+ _____  
+|2    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:tesadsadas;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:20
+ _____  
+|J    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:sdasdas;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:22
+ _____  
+|4    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:sdadasd;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+
+Partida jogada em: 04/04/2024 11:24
+ _____  
+|8    | 
+|  S  | 
+|_____| 
+

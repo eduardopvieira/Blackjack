@@ -44,7 +44,7 @@ public class Pontuacao {
 
     @Override
     public String toString() {
-        return "Pontuacao [nome=" + nome + ", pontos=" + pontos + ", tempo=" + tempo + "]";
+        return "Jogador:" + nome + " Pontuação:" + pontos + ", Tempo de jogo:" + tempo + "\n";
     }
 
     public String getNome() {
