@@ -22,14 +22,6 @@ public class Pontuacao {
         // this.tempo = tempo;
     }
 
-    
-
-    
-
-    // public int getPontos() {
-    //     // return this.pontos;
-    // }
-
     public int getPontos() {
         return pontos;
     }
@@ -54,8 +46,5 @@ public class Pontuacao {
     public int getCartas() {
         return this.qtdCartas;
     }
-
-    // public double getTempo() {
-    //     // return this.tempo / 1000;
-    // }
 }
+

@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import Ordenacao.QuickSortPontuacao;
+
 
 public class LeitorHistorico {
 
@@ -30,6 +32,8 @@ public class LeitorHistorico {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        QuickSortPontuacao qsp = new QuickSortPontuacao();
+        qsp.sort(jogadores);
         return jogadores;
     }
 }

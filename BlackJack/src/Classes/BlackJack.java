@@ -7,13 +7,12 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashSet;
-
+import javax.swing.Timer;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -30,14 +29,7 @@ import ImpLL.MyLinkedList;
 
 public class BlackJack {
 
-    public static final String reset = "\u001B[0m";
-    public static final String roxo = "\u001B[35m";
-    public static final String vermelho = "\u001B[31m";
-    public static final String verde = "\u001B[32m";
-    public static final String amarelo = "\u001B[33m";
-
     double tempoTotal;
-
     String nomeJogador;
 
     int boardWidth = 900;
@@ -46,18 +38,17 @@ public class BlackJack {
     int cardWidth = 110;
     int cardHeight = 154;
 
-    String somatorioMao = "Valor total na mão: ";
-
     Pilha<Carta> mesa;
 
     Mao mao = new Mao();
     Mao maoDealer = new Mao(true);
 
-    public JFrame frame = new JFrame("Blackjack"){};
+    public JFrame frame = new JFrame("Blackjack") {
+    };
 
     public JFrame historico = new JFrame("Historico");
 
-    public String popout(){
+    public String popout() {
         String nomeJogador = JOptionPane.showInputDialog("Digite seu nome seu maldito:");
 
         return nomeJogador;
@@ -72,142 +63,137 @@ public class BlackJack {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
-                try {
-                    // Escrevendo uma carta
-                    Image hiddenCardImg = new ImageIcon(getClass().getResource("./cards/BACK.png")).getImage();
-                    g.drawImage(hiddenCardImg, 20, 20, cardWidth, cardHeight, null);
-    
-                    MyLinkedList<Carta> cartasDealer = maoDealer.getListaCartas();
-    
-                    for (int i = 0; i < cartasDealer.getSize(); i++) {
-                        Carta carta = cartasDealer.get(i);
-                        Image cardImg = new ImageIcon(getClass()
-                                .getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png"))
-                                .getImage();
-                        g.drawImage(cardImg, cardWidth + 25 + (cardWidth + 5) * i, 20, cardWidth, cardHeight, null);
-                    }
-    
-                    MyLinkedList<Carta> cartasPlayer = mao.getListaCartas();
-    
-                    for (int i = 0; i < cartasPlayer.getSize(); i++) {
-                        Carta carta = cartasPlayer.get(i);
-                        Image cardImg = new ImageIcon(getClass()
-                                .getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png"))
-                                .getImage();
-                        g.drawImage(cardImg, 20 + (cardWidth + 5) * i, 320, cardWidth, cardHeight, null);
-                    }
-    
-                    Integer maoTotal = mao.getSomaTotal();
-    
-                    String somatorioMao = "Valor total na mão:" + maoTotal.toString();
-    
-                    g.setFont(new Font("Arial", Font.PLAIN, 30));
-                    g.setColor(Color.white);
-                    g.drawString(somatorioMao, 10, 520);
-    
-                    Integer maoTotalDealer = maoDealer.getSomaTotal();
-    
-                    String somatorioMaoDealer = "Valor total na mão:" + maoTotalDealer.toString();
-    
-                    g.setFont(new Font("Arial", Font.PLAIN, 30));
-                    g.setColor(Color.white);
-                    g.drawString(somatorioMaoDealer, 0, 210);
-    
-                    if (!stayButton.isEnabled() || mao.getSomaTotal() >= 21) {
-    
-                        hiButton.setEnabled(false);
-                        stayButton.setEnabled(false);
-    
-                        String message = "";
-    
-                        if (mao.getSomaTotal() > 21
-                                || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)) {
-    
-                            message = "Você perdeu! Tempo de jogo: " + (tempoTotal/1000);
-    
-                        } else if (maoDealer.getSomaTotal() > 21) {
-    
-                            message = "Você venceu!";
-    
-                        } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()) {
-    
-                            message = "BLACKJACK";
-    
-                        } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()) {
-    
-                            message = "Empate";
-    
-                        }
-    
-                        g.setFont(new Font("Arial", Font.PLAIN, 30));
-                        g.setColor(Color.white);
-                        g.drawString(message, 200, 600);
+            try {
+                // Escrevendo uma carta
+                Image hiddenCardImg = new ImageIcon(getClass().getResource("./cards/BACK.png")).getImage();
+                g.drawImage(hiddenCardImg, 20, 20, cardWidth, cardHeight, null);
 
-                        frame.dispose();
+                MyLinkedList<Carta> cartasDealer = maoDealer.getListaCartas();
 
-
-                        historico.setVisible(true);
-                        historico.setSize(boardWidth, boardHeight);
-                        historico.setLocation(400, 50);
-                        historico.setResizable(false);
-                        historico.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-                        Border borda = BorderFactory.createLineBorder(Color.BLACK, 2); // Cor preta e 2 pixels de largura
-
-                        historicoJPanel.setLayout(new BoxLayout(historicoJPanel, BoxLayout.Y_AXIS));
-                        historicoJPanel.setBackground(new Color(244, 244, 244));
-                        historicoJPanel.setBackground(new Color(53, 101, 77));
-                        historicoJPanel.setBorder(borda);
-
-
-
-                        JLabel tituloJLabel = new JLabel("LISTA DE JOGADORES");
-                        tituloJLabel.setFont(new Font("Arial", Font.BOLD, 30));
-                        tituloJLabel.setForeground(Color.BLACK);
-                        historicoJPanel.add(tituloJLabel);
-
-                        String caminho = "./Saida/historico.txt";
-
-                        ArrayList<Pontuacao> listaJogadores = leitor.lerArquivo(caminho);
-                        int tamanhoLista = listaJogadores.size();
-
-                        JLabel label[] = new JLabel[tamanhoLista];
-
-
-                        for (int i = 0; i < tamanhoLista; i++) {
-
-                            label[i] = new JLabel(listaJogadores.get(i).toString());
-                            label[i].setFont(new Font("Arial", Font.PLAIN, 20));
-                            label[i].setForeground(Color.WHITE);
-                            System.out.println(listaJogadores.get(i).toString());
-
-                            historicoJPanel.add(label[i]);
-                        }
-
-                        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-                        centerPanel.setBackground(new Color(244, 244, 244));
-                        centerPanel.setBackground(new Color(53, 101, 77));
-
-                        centerPanel.add(historicoJPanel);
-                        historico.add(centerPanel);
-
-    
-                    }
-    
-                } catch (Exception e) {
-                    e.printStackTrace();
+                for (int i = 0; i < cartasDealer.getSize(); i++) {
+                    Carta carta = cartasDealer.get(i);
+                    Image cardImg = new ImageIcon(getClass()
+                            .getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png"))
+                            .getImage();
+                    g.drawImage(cardImg, cardWidth + 25 + (cardWidth + 5) * i, 20, cardWidth, cardHeight, null);
                 }
-            
+
+                MyLinkedList<Carta> cartasPlayer = mao.getListaCartas();
+
+                for (int i = 0; i < cartasPlayer.getSize(); i++) {
+                    Carta carta = cartasPlayer.get(i);
+                    Image cardImg = new ImageIcon(getClass()
+                            .getResource("./cards/" + carta.getValor() + "-" + carta.conversorNaipe() + ".png"))
+                            .getImage();
+                    g.drawImage(cardImg, 20 + (cardWidth + 5) * i, 320, cardWidth, cardHeight, null);
+                }
+
+                Integer maoTotal = mao.getSomaTotal();
+
+                String somatorioMao = "Valor total na mão:" + maoTotal.toString();
+
+                g.setFont(new Font("Arial", Font.PLAIN, 30));
+                g.setColor(Color.white);
+                g.drawString(somatorioMao, 10, 520);
+
+                Integer maoTotalDealer = maoDealer.getSomaTotal();
+
+                String somatorioMaoDealer = "Valor total na mão:" + maoTotalDealer.toString();
+
+                g.setFont(new Font("Arial", Font.PLAIN, 30));
+                g.setColor(Color.white);
+                g.drawString(somatorioMaoDealer, 0, 210);
+
+                if (!stayButton.isEnabled() || mao.getSomaTotal() >= 21) {
+
+                    hitButton.setEnabled(false);
+                    stayButton.setEnabled(false);
+
+                    String message = "";
+
+                    if (mao.getSomaTotal() > 21
+                            || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)) {
+
+                        message = "Você perdeu! Tempo de jogo: " + (tempoTotal / 1000);
+
+                    } else if (maoDealer.getSomaTotal() > 21) {
+
+                        message = "Você venceu!";
+
+                    } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()) {
+
+                        message = "BLACKJACK";
+
+                    } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()) {
+                        message = "Empate";
+                    }
+
+                    g.setFont(new Font("Arial", Font.PLAIN, 30));
+                    g.setColor(Color.white);
+                    g.drawString(message, 200, 600);
+
+                    rankingButton.setVisible(true);
+
+                    historico.setSize(boardWidth, boardHeight);
+                    historico.setLocation(400, 50);
+                    historico.setResizable(false);
+                    historico.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                    Border borda = BorderFactory.createLineBorder(Color.BLACK, 2); // Cor preta e 2 pixels de largura
+
+                    historicoJPanel.setLayout(new BoxLayout(historicoJPanel, BoxLayout.Y_AXIS));
+                    historicoJPanel.setBackground(new Color(244, 244, 244));
+                    historicoJPanel.setBackground(new Color(53, 101, 77));
+                    historicoJPanel.setBorder(borda);
+
+
+                    JLabel tituloJLabel = new JLabel("LISTA DE JOGADORES");
+                    tituloJLabel.setFont(new Font("Arial", Font.BOLD, 30));
+                    tituloJLabel.setForeground(Color.BLACK);
+                    historicoJPanel.add(tituloJLabel);
+
+                    String caminho = "./Saida/historico.txt";
+
+                    ArrayList<Pontuacao> listaJogadores = leitor.lerArquivo(caminho);
+                    int tamanhoLista = listaJogadores.size();
+
+                    JLabel label[] = new JLabel[tamanhoLista];
+
+
+                    for (int i = 0; i < tamanhoLista; i++) {
+
+                        label[i] = new JLabel(listaJogadores.get(i).toString());
+                        label[i].setFont(new Font("Arial", Font.PLAIN, 20));
+                        label[i].setForeground(Color.WHITE);
+                        System.out.println(listaJogadores.get(i).toString());
+
+                        historicoJPanel.add(label[i]);
+                    }
+
+                    JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+                    centerPanel.setBackground(new Color(244, 244, 244));
+                    centerPanel.setBackground(new Color(53, 101, 77));
+
+                    centerPanel.add(historicoJPanel);
+                    historico.add(centerPanel);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     };
     JPanel historicoJPanel = new JPanel();
     JPanel buttonPanel = new JPanel();
     JTextField textField = new JTextField();
-    JButton hiButton = new JButton("Hit");
+    JButton hitButton = new JButton("Puxar");
     JButton stayButton = new JButton("Parar");
+    JButton rankingButton = new JButton("Ranking");
+
 
     public BlackJack() {
-    }; // Construtor
+    }
 
     public Pontuacao comecarPartida() throws MyException {
         long startTime = System.currentTimeMillis();
@@ -218,9 +204,9 @@ public class BlackJack {
         // PUXAR PRIMEIRA CARTA
         mao.adicionarCarta(mesa.pop());
 
-        nomeJogador = popout();  
-        
-        if(nomeJogador == null){
+        nomeJogador = popout();
+
+        if (nomeJogador == null) {
             System.exit(0);
         }
 
@@ -229,19 +215,22 @@ public class BlackJack {
         frame.setLocation(400, 50);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
 
         gamePanel.setLayout(new BorderLayout());
         gamePanel.setBackground(new Color(53, 101, 77));
         frame.add(gamePanel);
 
-        hiButton.setFocusable(false);
-        buttonPanel.add(hiButton);
+        hitButton.setFocusable(false);
+        buttonPanel.add(hitButton);
         stayButton.setFocusable(false);
         buttonPanel.add(stayButton);
+        rankingButton.setFocusable(false);
+        rankingButton.setVisible(false);
+        buttonPanel.add(rankingButton);
+
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
-        hiButton.addActionListener(new ActionListener() { //BOTAO DE HIT
+        hitButton.addActionListener(new ActionListener() { //BOTAO DE HIT
             public void actionPerformed(ActionEvent e) {
                 try {
                     Carta c;
@@ -256,12 +245,12 @@ public class BlackJack {
 
         stayButton.addActionListener(new ActionListener() { //BOTAO DE QND PARA DE PUXAR
             public void actionPerformed(ActionEvent e) {
-                hiButton.setEnabled(false);
+                hitButton.setEnabled(false);
                 stayButton.setEnabled(false);
+                rankingButton.setEnabled(true);
 
                 while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal()
                         && mao.getSomaTotal() <= 21) {
-
                     try {
                         maoDealer.adicionarCarta(mesa.pop());
                     } catch (MyException e1) {
@@ -269,7 +258,17 @@ public class BlackJack {
                     }
                 }
 
+                rankingButton.setVisible(true);
                 gamePanel.repaint();
+
+            }
+        });
+
+        rankingButton.addActionListener(new ActionListener(){ //BOTAO DE IR PRO RANKING
+            public void actionPerformed(ActionEvent e) {
+
+                frame.dispose(); // Fecha a tela de jogo
+                historico.setVisible(true); // Exibe a tela de histórico
             }
         });
 
@@ -281,10 +280,6 @@ public class BlackJack {
         Pontuacao pt = new Pontuacao(nomeJogador, mao.getSomaTotal(), mao.getQtdCartas(), tempoTotal);
         historico.gravarHistorico(nomeJogador, mao.maoFinal(), pt);
         return pt;
-    }
-
-    public void jogandoPartida() throws MyException{
-        System.out.println("teste");
     }
 
     public Pilha<Carta> prepararMesa() throws MyException {
@@ -300,5 +295,4 @@ public class BlackJack {
         pilhaCartas.embaralharPilha(); // Agora ela ta embaralhada
         return pilhaCartas;
     }
-
 }

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7aae5dc2-f461-4cb1-b7a5-0060203f8c9a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlackJack/src/Classes/EscritorArquivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack/src/Classes/EscritorArquivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlackJack/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJack/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +10,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="tryinterface" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -26,7 +29,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "newInterface",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Eduardo Vieira/Desktop/Repositories/BlackJack/BlackJack",
     "nodejs_package_manager_path": "npm",
@@ -53,6 +56,9 @@
       <workItem from="1709493959769" duration="28000" />
       <workItem from="1709736920328" duration="38000" />
       <workItem from="1709737418879" duration="11000" />
+      <workItem from="1712424599931" duration="75000" />
+      <workItem from="1712424682894" duration="24000" />
+      <workItem from="1712424712098" duration="96000" />
     </task>
     <servers />
   </component>
