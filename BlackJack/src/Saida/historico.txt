@@ -7,3 +7,12 @@ Partida jogada em: 06/04/2024 21:05
 |  D  | |  S  | 
 |_____| |_____| 
 
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:4;Tempo: 1685.0;s
+
+Partida jogada em: 06/04/2024 21:08
+ _____   _____   _____   _____  
+|5    | |2    | |9    | |8    | 
+|  H  | |  H  | |  C  | |  D  | 
+|_____| |_____| |_____| |_____| 
+

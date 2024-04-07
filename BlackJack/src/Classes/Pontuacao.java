@@ -16,7 +16,7 @@ public class Pontuacao {
     }
 
     public Pontuacao(String nome, int pontos, int qtdCartas, double tempo, String resultadoDaPartida) {
-        this.nome = nome;
+        this.nome = nome.toUpperCase();
         this.pontos = pontos;
         this.qtdCartas = qtdCartas;
         this.tempo = tempo; 
