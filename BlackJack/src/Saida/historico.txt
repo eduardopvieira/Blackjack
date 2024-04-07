@@ -1,54 +1,9 @@
 =-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:asd;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
+Jogador:Paulo;Pontos:0;Cartas Puxadas:2;Tempo: 1468.0;s
 
-Partida jogada em: 06/04/2024 16:10
- _____  
-|5    | 
-|  C  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:hjb;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
-
-Partida jogada em: 06/04/2024 16:10
- _____  
-|A    | 
-|  H  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:dfg;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
-
-Partida jogada em: 06/04/2024 16:12
- _____  
-|2    | 
-|  H  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:a;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
-
-Partida jogada em: 06/04/2024 16:13
- _____  
-|2    | 
-|  D  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:sdf;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
-
-Partida jogada em: 06/04/2024 16:13
- _____  
-|7    | 
-|  H  | 
-|_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:sdf;Pontos:0;Cartas Puxadas:1;Tempo: 0.0;s
-
-Partida jogada em: 06/04/2024 16:17
- _____  
-|K    | 
-|  H  | 
-|_____| 
+Partida jogada em: 06/04/2024 21:05
+ _____   _____  
+|Q    | |K    | 
+|  D  | |  S  | 
+|_____| |_____| 
 

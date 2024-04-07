@@ -15,11 +15,30 @@ public class Pontuacao {
         this.tempo = tempo;
     }
 
-    public Pontuacao(String nome, int pontos, int qtdCartas, double tempo) {
+    public Pontuacao(String nome, int pontos, int qtdCartas, double tempo, String resultadoDaPartida) {
         this.nome = nome;
-        // this.pontos = pontos;
+        this.pontos = pontos;
         this.qtdCartas = qtdCartas;
-        // this.tempo = tempo;
+        this.tempo = tempo; 
+
+        int pontosDeTempo = (int)(50/(tempo/1000));
+        int pontosDePartida = 0;
+
+        if (resultadoDaPartida == "DERROTA") {
+            pontosDePartida = 0;
+            pontosDeTempo = 0;
+        } else if (resultadoDaPartida == "VITORIA") {
+            pontosDePartida = 30;
+        } else if (resultadoDaPartida == "BLACKJACK") {
+            pontosDePartida = 60;
+        } else if (resultadoDaPartida == "EMPATE") {
+            pontosDePartida = 15;
+        } else {
+            pontosDePartida = 0;
+            pontosDeTempo = 0;
+        }
+
+        this.pontos = pontosDeTempo + pontosDePartida;
     }
 
     public int getPontos() {
@@ -36,7 +55,7 @@ public class Pontuacao {
 
     @Override
     public String toString() {
-        return "Jogador:" + nome + " Pontuação:" + pontos + ", Tempo de jogo:" + tempo + "\n";
+        return "| Jogador:" + nome + " | Pontuação:" + pontos + "| Tempo de jogo:" + (tempo/1000) + " |\n";
     }
 
     public String getNome() {

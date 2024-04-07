@@ -12,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashSet;
-import javax.swing.Timer;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -31,6 +30,7 @@ public class BlackJack {
 
     double tempoTotal;
     String nomeJogador;
+    long startTime;
 
     int boardWidth = 900;
     int boardHeight = 700;
@@ -41,7 +41,7 @@ public class BlackJack {
     Pilha<Carta> mesa;
 
     Mao mao = new Mao();
-    Mao maoDealer = new Mao(true);
+    Mao maoDealer = new Mao();
 
     public JFrame frame = new JFrame("Blackjack") {
     };
@@ -50,6 +50,9 @@ public class BlackJack {
 
     public String popout() {
         String nomeJogador = JOptionPane.showInputDialog("Digite seu nome seu maldito:");
+
+        startTime = System.currentTimeMillis();
+
 
         return nomeJogador;
     };
@@ -111,26 +114,41 @@ public class BlackJack {
 
                     String message = "";
 
-                    if (mao.getSomaTotal() > 21
-                            || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)) {
+                    long endTime = System.currentTimeMillis();
+                    tempoTotal = endTime - startTime;
+
+                    String resultadoDaPartida = "";
+
+                    if (mao.getSomaTotal() > 21 || (mao.getSomaTotal() < maoDealer.getSomaTotal() && maoDealer.getSomaTotal() <= 21)) {
 
                         message = "Você perdeu! Tempo de jogo: " + (tempoTotal / 1000);
+                        resultadoDaPartida = "DERROTA";
 
                     } else if (maoDealer.getSomaTotal() > 21) {
 
                         message = "Você venceu!";
+                        resultadoDaPartida = "VITORIA";
+
 
                     } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()) {
 
                         message = "BLACKJACK";
+                        resultadoDaPartida = "BLACKJACK";
+
 
                     } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()) {
                         message = "Empate";
+                        resultadoDaPartida = "EMPATE";
+
                     }
 
                     g.setFont(new Font("Arial", Font.PLAIN, 30));
                     g.setColor(Color.white);
                     g.drawString(message, 200, 600);
+
+                    Historico gravarHistorico = new Historico();
+                    Pontuacao pt = new Pontuacao(nomeJogador, mao.getSomaTotal(), mao.getQtdCartas(), tempoTotal, resultadoDaPartida);
+                    gravarHistorico.gravarHistorico(mao.maoFinal(), pt);
 
                     rankingButton.setVisible(true);
 
@@ -195,8 +213,7 @@ public class BlackJack {
     public BlackJack() {
     }
 
-    public Pontuacao comecarPartida() throws MyException {
-        long startTime = System.currentTimeMillis();
+    public void comecarPartida() throws MyException {
         this.mesa = prepararMesa();
 
         maoDealer.adicionarCarta(mesa.pop());
@@ -272,14 +289,6 @@ public class BlackJack {
             }
         });
 
-        long endTime = System.currentTimeMillis();
-        tempoTotal = endTime - startTime;
-
-        mao.maoFinal();
-        Historico historico = new Historico();
-        Pontuacao pt = new Pontuacao(nomeJogador, mao.getSomaTotal(), mao.getQtdCartas(), tempoTotal);
-        historico.gravarHistorico(nomeJogador, mao.maoFinal(), pt);
-        return pt;
     }
 
     public Pilha<Carta> prepararMesa() throws MyException {

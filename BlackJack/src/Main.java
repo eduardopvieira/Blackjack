@@ -1,5 +1,4 @@
 import Classes.BlackJack;
-import Classes.Pontuacao;
 import Exception.MyException;
 import java.io.IOException;
 
@@ -9,6 +8,6 @@ public class Main {
 
         BlackJack bj = new BlackJack();
 
-        Pontuacao pontuacoes = bj.comecarPartida();
+        bj.comecarPartida();
     }
 }

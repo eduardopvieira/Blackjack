@@ -7,16 +7,6 @@ import ImpLL.MyLinkedList;
 public class Mao {
     MyLinkedList<Carta> listaCartas = new MyLinkedList<>();
 
-    private boolean isDealer;
-
-    public Mao() {
-        this.isDealer = false;
-    }
-
-    public Mao(boolean isDealer) {
-        this.isDealer = isDealer;
-    }
-
     public int getSomaTotal() {
         int somaTotal = 0;
 
