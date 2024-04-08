@@ -16,3 +16,75 @@ Partida jogada em: 06/04/2024 21:08
 |  H  | |  H  | |  C  | |  D  | 
 |_____| |_____| |_____| |_____| 
 
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:CAIO;Pontos:0;Cartas Puxadas:3;Tempo: 5300.0;s
+
+Partida jogada em: 08/04/2024 10:17
+ _____   _____   _____  
+|A    | |J    | |Q    | 
+|  D  | |  H  | |  S  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:EDUARDO;Pontos:0;Cartas Puxadas:2;Tempo: 15284.0;s
+
+Partida jogada em: 08/04/2024 10:18
+ _____   _____  
+|9    | |8    | 
+|  S  | |  D  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:SDF;Pontos:0;Cartas Puxadas:4;Tempo: 6560.0;s
+
+Partida jogada em: 08/04/2024 11:11
+ _____   _____   _____   _____  
+|5    | |5    | |6    | |7    | 
+|  D  | |  C  | |  D  | |  C  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:DUDIS;Pontos:0;Cartas Puxadas:3;Tempo: 6602.0;s
+
+Partida jogada em: 08/04/2024 11:11
+ _____   _____   _____  
+|A    | |J    | |Q    | 
+|  H  | |  H  | |  C  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:SD;Pontos:0;Cartas Puxadas:4;Tempo: 4510.0;s
+
+Partida jogada em: 08/04/2024 11:12
+ _____   _____   _____   _____  
+|3    | |2    | |J    | |6    | 
+|  D  | |  C  | |  H  | |  H  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:FJK;Pontos:75;Cartas Puxadas:3;Tempo: 3150.0;s
+
+Partida jogada em: 08/04/2024 11:12
+ _____   _____   _____  
+|A    | |Q    | |8    | 
+|  D  | |  H  | |  H  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:AD;Pontos:0;Cartas Puxadas:2;Tempo: 4303.0;s
+
+Partida jogada em: 08/04/2024 11:15
+ _____   _____  
+|8    | |10   | 
+|  H  | |  S  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:SF;Pontos:39;Cartas Puxadas:3;Tempo: 5439.0;s
+
+Partida jogada em: 08/04/2024 11:16
+ _____   _____   _____  
+|4    | |9    | |6    | 
+|  S  | |  H  | |  S  | 
+|_____| |_____| |_____| 
+

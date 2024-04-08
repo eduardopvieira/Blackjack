@@ -20,10 +20,10 @@ public class QuickSortPontuacao {
     }
 
     private int partition(ArrayList<Pontuacao> pontuacoes, int low, int high) {
-        double pivot = pontuacoes.get(high).getTempo();
+        double pivot = pontuacoes.get(high).getPontos();
         int i = low - 1;
         for (int j = low; j < high; j++) {
-            if (pontuacoes.get(j).getTempo() <= pivot) {
+            if (pontuacoes.get(j).getPontos() >= pivot) {
                 i++;
                 swap(pontuacoes, i, j);
             }
