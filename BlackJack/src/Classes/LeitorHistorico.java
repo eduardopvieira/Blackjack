@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import Ordenacao.QuickSortPontuacao;
+
+import Busca.BuscaLinear;
+import Ordenacao.QuickSort;
 
 
 public class LeitorHistorico {
@@ -32,8 +34,24 @@ public class LeitorHistorico {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        QuickSortPontuacao qsp = new QuickSortPontuacao();
-        qsp.sort(jogadores);
+
+        BuscaLinear bl = new BuscaLinear();
+
+        ArrayList<Pontuacao> p = bl.buscarNome(jogadores, "eduardo");
+
+        System.out.println("A chamada do algoritmo de busca ta na classe LeitorHistorico");
+        if (p != null) {
+            for (Pontuacao teste : p) {
+                System.out.println("Pontuacao: " + teste.getNome() + "| Pontos: " + teste.getPontos() + "| Tempo: " + teste.getTempo()/1000);
+            }
+        } else {
+            System.out.println("Não há ninguem com o nome buscado.");
+        }
+
+        QuickSort qs = new QuickSort();
+        qs.sort(jogadores);
         return jogadores;
+
+
     }
 }

@@ -50,10 +50,7 @@ public class BlackJack {
 
     public String popout() {
         String nomeJogador = JOptionPane.showInputDialog("Digite seu nome seu maldito:");
-
         startTime = System.currentTimeMillis();
-
-
         return nomeJogador;
     };
 
@@ -126,18 +123,18 @@ public class BlackJack {
 
                     } else if (maoDealer.getSomaTotal() > 21) {
 
-                        message = "Você venceu!";
+                        message = "Você venceu! Tempo de jogo: " + (tempoTotal / 1000);
                         resultadoDaPartida = "VITORIA";
 
 
                     } else if (mao.getSomaTotal() == 21 && mao.getSomaTotal() > maoDealer.getSomaTotal()) {
 
-                        message = "BLACKJACK";
+                        message = "BLACKJACK! Tempo de jogo: " + (tempoTotal/1000);
                         resultadoDaPartida = "BLACKJACK";
 
 
                     } else if (mao.getSomaTotal() <= 21 && mao.getSomaTotal() == maoDealer.getSomaTotal()) {
-                        message = "Empate";
+                        message = "Empate! Tempo de jogo: " + (tempoTotal / 1000);
                         resultadoDaPartida = "EMPATE";
 
                     }
@@ -183,7 +180,6 @@ public class BlackJack {
                         label[i] = new JLabel(listaJogadores.get(i).toString());
                         label[i].setFont(new Font("Arial", Font.PLAIN, 20));
                         label[i].setForeground(Color.WHITE);
-                        System.out.println(listaJogadores.get(i).toString());
 
                         historicoJPanel.add(label[i]);
                     }
@@ -223,7 +219,7 @@ public class BlackJack {
 
         nomeJogador = popout();
 
-        if (nomeJogador == null) {
+        if (nomeJogador == null || nomeJogador.isEmpty()) {
             System.exit(0);
         }
 
@@ -286,6 +282,7 @@ public class BlackJack {
 
                 frame.dispose(); // Fecha a tela de jogo
                 historico.setVisible(true); // Exibe a tela de histórico
+
             }
         });
 

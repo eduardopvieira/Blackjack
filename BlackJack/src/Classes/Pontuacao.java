@@ -1,6 +1,6 @@
 package Classes;
 
-public class Pontuacao {
+public class Pontuacao implements Comparable<Pontuacao> {
     String nome;
     private int pontos;
     private int qtdCartas;
@@ -50,7 +50,7 @@ public class Pontuacao {
     }
 
     public double getTempo() {
-        return tempo;
+        return Math.round(this.tempo * 1000.0) / 1000.0; // fiz isso pra retornar 3 casas decimais
     }
 
     @Override
@@ -65,5 +65,11 @@ public class Pontuacao {
     public int getCartas() {
         return this.qtdCartas;
     }
+
+    @Override
+    public int compareTo(Pontuacao outraPontuacao) {
+        return Integer.compare(this.pontos, outraPontuacao.getPontos());
+    }
+
 }
 

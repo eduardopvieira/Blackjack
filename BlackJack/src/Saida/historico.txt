@@ -1,90 +1,81 @@
 =-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:Paulo;Pontos:0;Cartas Puxadas:2;Tempo: 1468.0;s
+Jogador:ED;Pontos:50;Cartas Puxadas:2;Tempo: 1428.0;s
 
-Partida jogada em: 06/04/2024 21:05
+Partida jogada em: 08/04/2024 13:54
  _____   _____  
-|Q    | |K    | 
+|6    | |J    | 
+|  H  | |  D  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:ASD;Pontos:0;Cartas Puxadas:2;Tempo: 873.0;s
+
+Partida jogada em: 08/04/2024 13:54
+ _____   _____  
+|A    | |3    | 
 |  D  | |  S  | 
 |_____| |_____| 
 
 =-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:TESTE;Pontos:0;Cartas Puxadas:4;Tempo: 1685.0;s
+Jogador:AS;Pontos:0;Cartas Puxadas:2;Tempo: 929.0;s
 
-Partida jogada em: 06/04/2024 21:08
- _____   _____   _____   _____  
-|5    | |2    | |9    | |8    | 
-|  H  | |  H  | |  C  | |  D  | 
-|_____| |_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:CAIO;Pontos:0;Cartas Puxadas:3;Tempo: 5300.0;s
-
-Partida jogada em: 08/04/2024 10:17
- _____   _____   _____  
-|A    | |J    | |Q    | 
-|  D  | |  H  | |  S  | 
-|_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:EDUARDO;Pontos:0;Cartas Puxadas:2;Tempo: 15284.0;s
-
-Partida jogada em: 08/04/2024 10:18
+Partida jogada em: 08/04/2024 13:55
  _____   _____  
-|9    | |8    | 
-|  S  | |  D  | 
-|_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:SDF;Pontos:0;Cartas Puxadas:4;Tempo: 6560.0;s
-
-Partida jogada em: 08/04/2024 11:11
- _____   _____   _____   _____  
-|5    | |5    | |6    | |7    | 
-|  D  | |  C  | |  D  | |  C  | 
-|_____| |_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:DUDIS;Pontos:0;Cartas Puxadas:3;Tempo: 6602.0;s
-
-Partida jogada em: 08/04/2024 11:11
- _____   _____   _____  
-|A    | |J    | |Q    | 
-|  H  | |  H  | |  C  | 
-|_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:SD;Pontos:0;Cartas Puxadas:4;Tempo: 4510.0;s
-
-Partida jogada em: 08/04/2024 11:12
- _____   _____   _____   _____  
-|3    | |2    | |J    | |6    | 
-|  D  | |  C  | |  H  | |  H  | 
-|_____| |_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:FJK;Pontos:75;Cartas Puxadas:3;Tempo: 3150.0;s
-
-Partida jogada em: 08/04/2024 11:12
- _____   _____   _____  
-|A    | |Q    | |8    | 
-|  D  | |  H  | |  H  | 
-|_____| |_____| |_____| 
-
-=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:AD;Pontos:0;Cartas Puxadas:2;Tempo: 4303.0;s
-
-Partida jogada em: 08/04/2024 11:15
- _____   _____  
-|8    | |10   | 
+|10   | |2    | 
 |  H  | |  S  | 
 |_____| |_____| 
 
 =-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
-Jogador:SF;Pontos:39;Cartas Puxadas:3;Tempo: 5439.0;s
+Jogador:EDUARDO;Pontos:0;Cartas Puxadas:1;Tempo: 934.0;s
 
-Partida jogada em: 08/04/2024 11:16
- _____   _____   _____  
-|4    | |9    | |6    | 
-|  S  | |  H  | |  S  | 
-|_____| |_____| |_____| 
+Partida jogada em: 08/04/2024 13:55
+ _____  
+|3    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:ED;Pontos:0;Cartas Puxadas:4;Tempo: 1158.0;s
+
+Partida jogada em: 08/04/2024 13:55
+ _____   _____   _____   _____  
+|A    | |8    | |5    | |J    | 
+|  S  | |  S  | |  H  | |  S  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:A;Pontos:0;Cartas Puxadas:1;Tempo: 442.0;s
+
+Partida jogada em: 08/04/2024 13:55
+ _____  
+|6    | 
+|  H  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:EDUARDO;Pontos:70;Cartas Puxadas:2;Tempo: 1242.0;s
+
+Partida jogada em: 08/04/2024 13:56
+ _____   _____  
+|K    | |5    | 
+|  D  | |  C  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:EDUARDO;Pontos:90;Cartas Puxadas:2;Tempo: 1650.0;s
+
+Partida jogada em: 08/04/2024 14:00
+ _____   _____  
+|J    | |10   | 
+|  H  | |  C  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:ED;Pontos:49;Cartas Puxadas:4;Tempo: 2623.0;s
+
+Partida jogada em: 08/04/2024 14:02
+ _____   _____   _____   _____  
+|8    | |3    | |A    | |7    | 
+|  H  | |  H  | |  D  | |  D  | 
+|_____| |_____| |_____| |_____| 
 
