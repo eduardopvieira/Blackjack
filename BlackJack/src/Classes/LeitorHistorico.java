@@ -48,7 +48,7 @@ public class LeitorHistorico {
             System.out.println("Não há ninguem com o nome buscado.");
         }
 
-        QuickSort qs = new QuickSort();
+        QuickSort<Pontuacao> qs = new QuickSort<>();
         qs.sort(jogadores);
         return jogadores;
 

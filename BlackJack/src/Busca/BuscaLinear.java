@@ -1,7 +1,6 @@
 package Busca;
 import Classes.Pontuacao;
 
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class BuscaLinear {

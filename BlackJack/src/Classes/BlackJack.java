@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
+import Busca.BuscaLinear;
 import Exception.MyException;
 import ImpLL.MyLinkedList;
 
@@ -30,6 +31,7 @@ public class BlackJack {
 
     double tempoTotal;
     String nomeJogador;
+    String buscaJogador;
     long startTime;
 
     int boardWidth = 900;
@@ -47,6 +49,8 @@ public class BlackJack {
     };
 
     public JFrame historico = new JFrame("Historico");
+    public JFrame historico1 = new JFrame("Historico");
+
 
     public String popout() {
         String nomeJogador = JOptionPane.showInputDialog("Digite seu nome seu maldito:");
@@ -55,6 +59,8 @@ public class BlackJack {
     };
 
     public LeitorHistorico leitor = new LeitorHistorico();
+
+    BuscaLinear busca = new BuscaLinear();
 
 
     JPanel gamePanel = new JPanel() {
@@ -190,6 +196,22 @@ public class BlackJack {
 
                     centerPanel.add(historicoJPanel);
                     historico.add(centerPanel);
+                    JPanel buscaPanel = new JPanel();
+                    buscaPanel.add(buscarButton);
+                    historico.add(buscaPanel,BorderLayout.SOUTH);
+
+                    buscarButton.addActionListener(new ActionListener(){ //BOTAO DE IR PRO RANKING
+                        public void actionPerformed(ActionEvent e) {
+            
+                            buscaJogador = JOptionPane.showInputDialog("Digite o nome do maldito:");
+
+                            HistoricoTela historicoTela = new HistoricoTela(listaJogadores, buscaJogador);
+                            historicoTela.setVisible(true);
+
+                            historico.dispose(); // Fecha a tela de jogo
+                        }
+                    });
+
                 }
 
             } catch (Exception e) {
@@ -199,11 +221,13 @@ public class BlackJack {
         }
     };
     JPanel historicoJPanel = new JPanel();
+    JPanel historicoJPanel1 = new JPanel();
     JPanel buttonPanel = new JPanel();
     JTextField textField = new JTextField();
     JButton hitButton = new JButton("Puxar");
     JButton stayButton = new JButton("Parar");
     JButton rankingButton = new JButton("Ranking");
+    JButton buscarButton = new JButton("Buscar Jogador");
 
 
     public BlackJack() {
