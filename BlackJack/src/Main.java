@@ -9,5 +9,6 @@ public class Main {
         BlackJack bj = new BlackJack();
 
         bj.comecarPartida();
+
     }
 }

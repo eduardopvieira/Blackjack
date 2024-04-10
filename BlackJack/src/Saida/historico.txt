@@ -151,3 +151,129 @@ Partida jogada em: 09/04/2024 10:48
 |  C  | |  H  | |  D  | 
 |_____| |_____| |_____| 
 
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:PAULO;Pontos:0;Cartas Puxadas:4;Tempo: 3159.0;s
+
+Partida jogada em: 10/04/2024 00:25
+ _____   _____   _____   _____  
+|6    | |3    | |4    | |Q    | 
+|  D  | |  D  | |  D  | |  C  | 
+|_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:PAULO;Pontos:92;Cartas Puxadas:2;Tempo: 1561.0;s
+
+Partida jogada em: 10/04/2024 00:25
+ _____   _____  
+|9    | |Q    | 
+|  H  | |  H  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:2;Tempo: 2031.0;s
+
+Partida jogada em: 10/04/2024 00:35
+ _____   _____  
+|K    | |4    | 
+|  D  | |  H  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:2;Tempo: 1873.0;s
+
+Partida jogada em: 10/04/2024 00:35
+ _____   _____  
+|4    | |4    | 
+|  D  | |  H  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:1;Tempo: 2597.0;s
+
+Partida jogada em: 10/04/2024 00:36
+ _____  
+|K    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:1;Tempo: 5283.0;s
+
+Partida jogada em: 10/04/2024 00:37
+ _____  
+|8    | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:54;Cartas Puxadas:2;Tempo: 2001.0;s
+
+Partida jogada em: 10/04/2024 00:38
+ _____   _____  
+|8    | |7    | 
+|  C  | |  C  | 
+|_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:1;Tempo: 1252.0;s
+
+Partida jogada em: 10/04/2024 00:39
+ _____  
+|10   | 
+|  D  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:59;Cartas Puxadas:1;Tempo: 1118.0;s
+
+Partida jogada em: 10/04/2024 00:39
+ _____  
+|10   | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:65;Cartas Puxadas:1;Tempo: 995.0;s
+
+Partida jogada em: 10/04/2024 00:39
+ _____  
+|K    | 
+|  S  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:0;Cartas Puxadas:1;Tempo: 962.0;s
+
+Partida jogada em: 10/04/2024 00:39
+ _____  
+|4    | 
+|  C  | 
+|_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:48;Cartas Puxadas:3;Tempo: 2655.0;s
+
+Partida jogada em: 10/04/2024 00:44
+ _____   _____   _____  
+|5    | |2    | |K    | 
+|  D  | |  H  | |  H  | 
+|_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:42;Cartas Puxadas:5;Tempo: 4074.0;s
+
+Partida jogada em: 10/04/2024 00:45
+ _____   _____   _____   _____   _____  
+|4    | |A    | |5    | |A    | |9    | 
+|  C  | |  D  | |  H  | |  S  | |  H  | 
+|_____| |_____| |_____| |_____| |_____| 
+
+=-=-=-=-=-=-=-= BLACKJACK =-=-=-=-=-=-=-=
+Jogador:TESTE;Pontos:51;Cartas Puxadas:3;Tempo: 2336.0;s
+
+Partida jogada em: 10/04/2024 00:45
+ _____   _____   _____  
+|2    | |9    | |9    | 
+|  C  | |  D  | |  C  | 
+|_____| |_____| |_____| 
+

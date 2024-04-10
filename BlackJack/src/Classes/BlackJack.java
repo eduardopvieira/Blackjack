@@ -34,6 +34,8 @@ public class BlackJack {
     String buscaJogador;
     long startTime;
 
+    public boolean newGame = false;
+
     int boardWidth = 900;
     int boardHeight = 700;
 
@@ -228,6 +230,7 @@ public class BlackJack {
     JButton stayButton = new JButton("Parar");
     JButton rankingButton = new JButton("Ranking");
     JButton buscarButton = new JButton("Buscar Jogador");
+    JButton newGameButton = new JButton("Novo Jogo");
 
 
     public BlackJack() {
@@ -265,6 +268,10 @@ public class BlackJack {
         rankingButton.setVisible(false);
         buttonPanel.add(rankingButton);
 
+        newGameButton.setFocusable(false);
+        newGameButton.setVisible(false);
+        buttonPanel.add(newGameButton);
+
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
         hitButton.addActionListener(new ActionListener() { //BOTAO DE HIT
@@ -285,6 +292,7 @@ public class BlackJack {
                 hitButton.setEnabled(false);
                 stayButton.setEnabled(false);
                 rankingButton.setEnabled(true);
+                newGameButton.setEnabled(true);
 
                 while (maoDealer.getSomaTotal() < 21 && maoDealer.getSomaTotal() < mao.getSomaTotal()
                         && mao.getSomaTotal() <= 21) {
@@ -296,6 +304,7 @@ public class BlackJack {
                 }
 
                 rankingButton.setVisible(true);
+                newGameButton.setVisible(true);
                 gamePanel.repaint();
 
             }
@@ -309,6 +318,23 @@ public class BlackJack {
 
             }
         });
+
+        newGameButton.addActionListener(new ActionListener(){ //BOTAO DE IR PRO RANKING
+            public void actionPerformed(ActionEvent e) {
+
+                frame.dispose(); // Fecha a tela de jogo
+                newGame = true; // Exibe a tela de histórico
+                BlackJack bj = new BlackJack();
+
+                try {
+                    bj.comecarPartida();
+                } catch (MyException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+            }
+        });
+
 
     }
 

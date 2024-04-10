@@ -58,5 +58,7 @@ public class HistoricoTela extends JFrame {
 
         centerPanel.add(historicoJPanel);
         add(centerPanel);
+
+
     }
 }
